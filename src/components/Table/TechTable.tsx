@@ -1,4 +1,3 @@
-
 export interface ColumnConfig<T> {
     header: string;
     key?: keyof T;
@@ -11,42 +10,42 @@ export interface TechTableProps<T> {
 }
 
 export const TechTable = <T,>({ columns, items }: TechTableProps<T>) => {
-  return (
-    <div className="overflow-x-auto">
-      <table className="min-w-full divide-y divide-gray-200">
-        <thead className="bg-white divide-y divide-gray-200">
-          <tr>
-            {columns.map((col) => (
-              <th
-                key={col.header}
-                scope="col"
-                className="px-6 py-3 text-center text-xs font-medium text-gray-700 uppercase tracking-wider"
-              >
-                {col.header}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody className="bg-white divide-y divide-gray-200">
-          {items.map((item, rowIndex) => (
-            <tr
-              key={rowIndex}
-              className={rowIndex % 2 === 0 ? undefined : 'bg-gray-50'}
-            >
-              {columns.map((col) => (
-                <td key={col.header} className="px-6 py-4 whitespace-nowrap text-gray-800 max-w-sm overflow-hidden text-ellipsis">
-                  {col.render
-                    ? col.render(item)
-                    : // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                      ((item[col.key!] as any) ?? '')}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
+    return (
+        <div className="overflow-x-auto">
+            <table className="min-w-full divide-y divide-gray-200">
+                <thead className="bg-white">
+                    <tr>
+                        {columns.map((col) => (
+                            <th
+                                key={col.header}
+                                scope="col"
+                                className="px-6 py-3 text-center text-xs font-medium text-gray-700 uppercase tracking-wider"
+                            >
+                                {col.header}
+                            </th>
+                        ))}
+                    </tr>
+                </thead>
+                <tbody className="bg-white divide-y divide-gray-200">
+                    {items.map((item, rowIndex) => (
+                        <tr
+                            key={rowIndex}
+                            className={rowIndex % 2 === 0 ? undefined : 'bg-gray-50'}
+                        >
+                            {columns.map((col) => (
+                                <td key={col.header} className="px-6 py-4 text-gray-800">
+                                    {col.render
+                                        ? col.render(item)
+                                        : // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                                        ((item[col.key!] as any) ?? '')}
+                                </td>
+                            ))}
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
+    );
 };
 
 export default TechTable;
