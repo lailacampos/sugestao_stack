@@ -1,12 +1,6 @@
 // src/data/techData.tsx
-import reactLogo from '../assets/react.svg';
-import reduxLogo from '../assets/redux.svg';
-import reactIconsLogo from '../assets/react-icons.svg';
-import reactRouterLogo from '../assets/react-router.svg';
-import reactTestingLibraryLogo from '../assets/react-testing-library.svg';
-import storybookLogo from '../assets/storybook.svg';
 import { GoPlus } from "react-icons/go";
-import type React from 'react';
+import * as logos from '../assets/logos/logos';
 
 export interface FrontendTechItem {
     category: React.ReactNode;
@@ -26,6 +20,7 @@ export interface SSRTechItem {
 }
 
 export const frontendTech: FrontendTechItem[] = [
+    // Base
     {
         category: (
             <div className='flex space-x-2 ml-0 md:ml-5'>
@@ -34,29 +29,44 @@ export const frontendTech: FrontendTechItem[] = [
         ),
         tech: (
             <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
-                <div className='flex items-center whitespace-nowrap hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200 mr-0'>
-                    <a href="https://reactjs.org/" className='flex items-center' target="_blank" rel="noopener noreferrer">
-                        <img src={reactLogo} alt="React Logo" width="24" height="24" className='inline-block' />
+                {/* React */}
+                <div className='flex items-center whitespace-nowrap mr-0'>
+                    <a href="https://reactjs.org/"
+                        className='flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200 mr-0'
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img src={logos.reactLogo} alt="React Logo" width="24" height="24" className='inline-block' />
                         <span className='ml-1'>React</span>
-                        <GoPlus className='inline-block ml-3 md:visible invisible' />
                     </a>
+                    <GoPlus className='inline-block md:visible invisible' />
                 </div>
-                <div className='flex items-center whitespace-nowrap hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200 m-0'>
-                    <a href="https://www.typescriptlang.org/" className='flex items-center' target="_blank" rel="noopener noreferrer">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" alt="TypeScript Logo" width="24" height="24" className='inline-block' />
+
+                {/* TypeScript */}
+                <div className='flex items-center whitespace-nowrap m-0'>
+                    <a href="https://www.typescriptlang.org/"
+                        className='flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200'
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img src={logos.typescriptLogo} alt="TypeScript Logo" width="24" height="24" className='inline-block' />
                         <span className='ml-1'>TypeScript</span>
-                        <GoPlus className='inline-block ml-3 md:visible invisible' />
                     </a>
+                    <GoPlus className='inline-block md:visible invisible' />
                 </div>
+
+                {/* Next.js */}
                 <div className='flex items-center whitespace-nowrap hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200 m-0'>
-                    <a href="https://vitejs.dev/" className='flex items-center' target="_blank" rel="noopener noreferrer">
-                        <img src="/vite.svg" alt="Vite Logo" width="24" height="24" className='inline-block' />
-                        <span className='ml-1'>Vite</span>
+                    <a href="https://nextjs.org/" className='flex items-center' target="_blank" rel="noopener noreferrer">
+                        <img src={logos.nextjsLogo} alt="Next.js Logo" width="24" height="24" className='inline-block' />
+                        <span className='ml-1'>Next.js</span>
                     </a>
                 </div>
             </div>
         )
     },
+
+    // Estado & Dados
     {
         category: (
             <div className='flex space-x-2 ml-0 md:ml-5'>
@@ -65,22 +75,34 @@ export const frontendTech: FrontendTechItem[] = [
         ),
         tech: (
             <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
-                <div className='flex items-center whitespace-nowrap hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200 mr-0'>
-                    <a href="https://redux-toolkit.js.org/" className='flex items-center' target="_blank" rel="noopener noreferrer">
-                        <img src={reduxLogo} alt="Redux Logo" width="24" height="24" className='inline-block' />
+                {/* Redux Toolkit */}
+                <div className='flex items-center whitespace-nowrap mr-0'>
+                    <a href="https://redux-toolkit.js.org/"
+                        className='flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200'
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img src={logos.reduxLogo} alt="Redux Logo" width="24" height="24" className='inline-block' />
                         <span className='ml-1'>Redux Toolkit</span>
-                        <GoPlus className='inline-block ml-3 md:visible invisible' />
                     </a>
+                    <GoPlus className='inline-block md:visible invisible' />
                 </div>
+
                 {/* RTK Query */}
-                <div className='flex items-center whitespace-nowrap hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200 mr-0'>
-                    <a href="https://redux-toolkit.js.org/rtk-query/overview" className='flex items-center' target="_blank" rel="noopener noreferrer">
+                <div className='flex items-center whitespace-nowrap'>
+                    <a href="https://redux-toolkit.js.org/rtk-query/overview"
+                        className='flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200'
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <span>RTK Query</span>
                     </a>
                 </div>
             </div>
         )
     },
+
+    // UI & CSS
     {
         category: (
             <div className='flex space-x-2 ml-0 md:ml-5'>
@@ -89,29 +111,67 @@ export const frontendTech: FrontendTechItem[] = [
         ),
         tech: (
             <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
-                {/* Tailwind CSS + daisyUI + Headless UI */}
-                <div className='flex items-center whitespace-nowrap hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200 mr-0'>
-                    <a href="https://tailwindcss.com/" className='flex items-center' target="_blank" rel="noopener noreferrer">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="Tailwind CSS Logo" width="24" height="24" className='inline-block' />
-                        <span className='ml-1'>Tailwind CSS</span>
-                        <GoPlus className='inline-block ml-3 md:visible invisible' />
+                {/* Tailwind CSS */}
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://tailwindcss.com/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src={logos.tailwindLogo}
+                            alt="Tailwind CSS"
+                            width={24}
+                            height={24}
+                        />
+                        <span className="ml-1">Tailwind CSS</span>
                     </a>
+                    <GoPlus className="inline-block md:visible invisible" />
                 </div>
-                <div className='flex items-center whitespace-nowrap hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200 mr-0'>
-                    <a href="https://daisyui.com/" className='flex items-center' target="_blank" rel="noopener noreferrer">
-                        <img src="https://img.daisyui.com/images/daisyui/mark-static.svg" alt="daisyUI Logo" width="24" height="24" className='inline-block' />
-                        <span className='ml-1'>daisyUI</span>
-                        <GoPlus className='inline-block ml-3 md:visible invisible' />
+
+                {/* daisyUI */}
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://daisyui.com/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src={logos.daisyuiLogo}
+                            alt="daisyUI"
+                            width={24}
+                            height={24}
+                        />
+                        <span className="ml-1">daisyUI</span>
                     </a>
+                    <GoPlus className="inline-block md:visible invisible" />
                 </div>
-                <div className='flex items-center whitespace-nowrap hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200 mr-0'>
-                    <a href="https://headlessui.com/" className='flex items-center' target="_blank" rel="noopener noreferrer">
-                        <span>Headless UI</span>
+
+                {/* Headless UI */}
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://headlessui.com/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src={logos.headlessuiLogo}
+                            alt="Headless UI"
+                            width={24}
+                            height={24}
+                            className="fill-blue-300"
+                        />
+                        <span className="ml-1">Headless UI</span>
                     </a>
                 </div>
             </div>
         )
     },
+
+    // Animações & Ícones
     {
         category: (
             <div className='flex space-x-2 ml-0 md:ml-5'>
@@ -120,22 +180,90 @@ export const frontendTech: FrontendTechItem[] = [
         ),
         tech: (
             <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
-                {/* Framer Motion + React Icons */}
-                <div className='flex items-center whitespace-nowrap hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200 mr-0'>
-                    <a href="https://www.framer.com/motion/" className='flex items-center' target="_blank" rel="noopener noreferrer">
-                        <span>Framer Motion</span>
+                {/* Framer Motion */}
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://www.framer.com/motion/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200 mr-0"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span className="ml-1">Framer Motion</span>
                     </a>
-                    <GoPlus className='inline-block ml-3 md:visible invisible' />
+                    <GoPlus className="inline-block md:visible invisible" />
                 </div>
-                <div className='flex items-center whitespace-nowrap hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200 mr-0'>
-                    <a href="https://react-icons.github.io/react-icons/" className='flex items-center' target="_blank" rel="noopener noreferrer">
-                        <img src={reactIconsLogo} alt="React Icons Logo" width="24" height="24" className='inline-block' />
-                        <span>React Icons</span>
+
+                {/* React Icons */}
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://react-icons.github.io/react-icons/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200 mr-0"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img src={logos.reactIconsLogo} alt="React Icons Logo" width={24} height={24} />
+                        <span className="ml-1">React Icons</span>
                     </a>
                 </div>
             </div>
         )
     },
+
+    // Listas & Tabelas Grandes
+    {
+        category: <div className="flex space-x-2 ml-0 md:ml-5">Listas & Tabelas Grandes</div>,
+        tech: (
+            <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
+
+                {/* TanStack Virtual */}
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://tanstack.com/virtual"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span>TanStack Virtual</span>
+                    </a>
+                    <GoPlus className="inline-block md:visible invisible" />
+                </div>
+
+                {/* TanStack Table */}
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://tanstack.com/table"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span>TanStack Table</span>
+                    </a>
+                </div>
+            </div>
+        ),
+    },
+
+    // Cache Offline & IndexedDB
+    {
+        category: <div className="flex space-x-2 ml-0 md:ml-5">Cache Offline & IndexedDB</div>,
+        tech: (
+            <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://dexie.org/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img src={logos.dexieLogo} alt="Dexie.js Logo" width={24} height={24} />
+                        <span className="ml-1">Dexie.js</span>
+                    </a>
+                </div>
+            </div>
+        ),
+    },
+
+    // Formulários & Validação
     {
         category: (
             <div className='flex space-x-2 ml-0 md:ml-5'>
@@ -144,131 +272,349 @@ export const frontendTech: FrontendTechItem[] = [
         ),
         tech: (
             <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
-                {/* Formik + Yup */}
-                <div className='flex items-center whitespace-nowrap hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200 mr-0'>
-                    <a href="https://formik.org/" className='flex items-center' target="_blank" rel="noopener noreferrer">
-                        <span>Formik</span>
+                {/* Formik */}
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://formik.org/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span className="ml-1">Formik</span>
                     </a>
-                    <GoPlus className='inline-block ml-3 md:visible invisible' />
+                    <GoPlus className="inline-block md:visible invisible" />
                 </div>
-                <div className='flex items-center whitespace-nowrap hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200 mr-0'>
-                    <a href="https://github.com/jquense/yup" className='flex items-center' target="_blank" rel="noopener noreferrer">
-                        <span>Yup</span>
+
+                {/* Yup */}
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://github.com/jquense/yup"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span className="ml-1">Yup</span>
                     </a>
                 </div>
             </div>
         )
     },
+
+    // Select/Autocomplete Avançado
+    {
+        category: <div className="flex space-x-2 ml-0 md:ml-5">Select/Autocomplete Avançado</div>,
+        tech: (
+            <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
+
+                {/* React-Select */}
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://react-select.com/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span className="ml-1">React-Select</span>
+                    </a>
+                    <GoPlus className="inline-block md:visible invisible" />
+                </div>
+
+                {/* Headless UI Combobox */}
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://headlessui.com/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span className="ml-1">Headless UI Combobox</span>
+                    </a>
+                </div>
+            </div>
+        ),
+    },
+
+    // SSR/SEO
     {
         category: (
-            <div className='flex space-x-2 ml-0 md:ml-5'>
-                Rotas
+            <div className="flex space-x-2 ml-0 md:ml-5">SSR/SEO</div>
+        ),
+        tech: (
+            <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
+                {/* next-seo */}
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://github.com/garmeeh/next-seo"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span>next-seo</span>
+                    </a>
+                    <GoPlus className="inline-block md:visible invisible" />
+                </div>
+                {/* next-optimized-images */}
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://github.com/cyrilwanner/next-optimized-images"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span>next-optimized-images</span>
+                    </a>
+                    <GoPlus className="inline-block md:visible invisible" />
+                </div>
+                {/* next-pwa */}
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://github.com/shadowwalker/next-pwa"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span>next-pwa</span>
+                    </a>
+                    <GoPlus className="inline-block md:visible invisible" />
+                </div>
+                {/* next-auth */}
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://next-auth.js.org/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span>next-auth</span>
+                    </a>
+                </div>
+            </div>
+        ),
+    },
+
+    // HTTP & Auth
+    {
+        category: (
+            <div className="flex space-x-2 ml-0 md:ml-5">HTTP & Auth</div>
+        ),
+        tech: (
+            <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
+
+                {/* Axios */}
+                <div className='flex items-center whitespace-nowrap mr-0'>
+                    <a
+                        href="https://axios-http.com/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img src={logos.axiosLogo} alt="Axios Logo" width={24} height={24} />
+                        <span className="ml-1">Axios</span>
+                    </a>
+                    <GoPlus className='inline-block md:visible invisible' />
+                </div>
+
+                {/* Axios Interceptors */}
+                <div className='flex items-center whitespace-nowrap'>
+                    <span className="hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200">
+                        Interceptors
+                    </span>
+                </div>
+            </div>
+        ),
+    },
+
+    // Observabilidade & Monitoramento
+    {
+        category: (
+            <div className="flex space-x-2 ml-0 md:ml-5">
+                Observabilidade & Monitoramento
             </div>
         ),
         tech: (
             <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
-                {/* React Router */}
-                <div className='flex items-center whitespace-nowrap hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200 mr-0'>
-                    <a href="https://reactrouter.com/" className='flex items-center' target="_blank" rel="noopener noreferrer">
-                        <img src={reactRouterLogo} alt="React Router Logo" width="24" height="24" className='inline-block mr-1' />
-                        <span>React Router</span>
+                {/* Sentry */}
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://sentry.io/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span>Sentry</span>
+                    </a>
+                    <GoPlus className="inline-block md:visible invisible" />
+                </div>
+                {/* LogRocket */}
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://logrocket.com/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span>LogRocket</span>
+                    </a>
+                    <GoPlus className="inline-block md:visible invisible" />
+                </div>
+                {/* Datadog RUM */}
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://docs.datadoghq.com/real_user_monitoring/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span>Datadog RUM</span>
                     </a>
                 </div>
             </div>
-        )
+        ),
     },
+
+    // Lint & Formatting
     {
         category: (
-            <div className='flex space-x-2 ml-0 md:ml-5'>
-                HTTP & Auth
-            </div>
+            <div className="flex space-x-2 ml-0 md:ml-5">Lint & Formatting</div>
         ),
         tech: (
             <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
-                {/* Axios + Interceptors */}
-                <div className='flex items-center whitespace-nowrap hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200 mr-0'>
-                    <a href="https://axios-http.com/" className='flex items-center' target="_blank" rel="noopener noreferrer">
-                        <img src="https://axios-http.com/assets/logo.svg" alt="Axios Logo" width="24" height="24" className='inline-block mr-1' />
-                        <span>Axios</span>
+                {/* ESLint */}
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://eslint.org/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/e/e3/ESLint_logo.svg"
+                            alt="ESLint"
+                            width={24}
+                            height={24}
+                        />
+                        <span>ESLint</span>
                     </a>
-                    <GoPlus className='inline-block ml-3 md:visible invisible' />
+                    <GoPlus className="inline-block md:visible invisible" />
                 </div>
-                <div className='flex items-center whitespace-nowrap hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200 mr-0'>
-                    <a href="https://axios-http.com/docs/interceptors" className='flex items-center' target="_blank" rel="noopener noreferrer">
-                        <span>Interceptors</span>
+                {/* Prettier */}
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://prettier.io/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src="https://prettier.io/icon.png"
+                            alt="ESLint"
+                            width={24}
+                            height={24}
+                        />
+                        <span>Prettier</span>
                     </a>
                 </div>
             </div>
-        )
+        ),
     },
+
+    // Git Hooks
     {
         category: (
-            <div className='flex space-x-2 ml-0 md:ml-5'>
-                Lint & Formatting
-            </div>
+            <div className="flex space-x-2 ml-0 md:ml-5">Git Hooks</div>
         ),
         tech: (
             <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
-                {/* ESLint + Prettier + vite-plugin-eslint */}
-                <div className='flex items-center whitespace-nowrap hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200 mr-0'>
-                    <a href="https://eslint.org/" className='flex items-center' target="_blank" rel="noopener noreferrer">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/ESLint_logo.svg" alt="ESLint Logo" width="24" height="24" className='inline-block' />
-                        <span className='ml-1'>ESLint</span>
-                        <GoPlus className='inline-block ml-3 md:visible invisible' />
+
+                {/* Husky */}
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://typicode.github.io/husky/#/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span className="ml-1">Husky</span>
                     </a>
+                    <GoPlus className="inline-block md:visible invisible" />
                 </div>
-                <div className='flex items-center whitespace-nowrap hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200 mr-0'>
-                    <a href="https://prettier.io/" className='flex items-center' target="_blank" rel="noopener noreferrer">
-                        <img src="https://prettier.io/icon.png" alt="Prettier Logo" width="24" height="24" className='inline-block' />
-                        <span className='ml-1'>Prettier</span>
+
+                {/* lint‑staged */}
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://github.com/okonet/lint-staged"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span className="ml-1">lint‑staged</span>
                     </a>
                 </div>
             </div>
-        )
+        ),
     },
+
+    // Testes
     {
         category: (
-            <div className='flex space-x-2 ml-0 md:ml-5'>
-                Testes
-            </div>
+            <div className="flex space-x-2 ml-0 md:ml-5">Testes</div>
         ),
         tech: (
             <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
-                {/* Vitest + React Testing Library */}
-                <div className='flex items-center whitespace-nowrap hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200 mr-0'>
-                    <a href="https://vitest.dev/" className='flex items-center' target="_blank" rel="noopener noreferrer">
-                        <img src="https://raw.githubusercontent.com/vitest-dev/vitest/3cb2c857057815274ed3b2d06fae8ad925c033f0/docs/public/logo.svg" alt="Vitest Logo" width="24" height="24" className='inline-block mr-1' />
-                        <span>Vitest</span>
+
+                {/* Vitest */}
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://vitest.dev/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img src={logos.vitestLogo} alt="Vitest Logo" width={24} height={24} />
+                        <span className="ml-1">Vitest</span>
                     </a>
-                    <GoPlus className='inline-block ml-3 md:visible invisible' />
+                    <GoPlus className="inline-block md:visible invisible" />
                 </div>
-                <div className='flex items-center whitespace-nowrap hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200 mr-0'>
-                    <a href="https://testing-library.com/docs/react-testing-library/intro/" className='flex items-center' target="_blank" rel="noopener noreferrer">
-                        <img src={reactTestingLibraryLogo} alt="React Testing Library Logo" width="24" height="24" className='inline-block mr-1' />
-                        <span>React Testing Library</span>
+
+                {/* React Testing Library */}
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://testing-library.com/docs/react-testing-library/intro/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img src={logos.reactTestingLibraryLogo} alt="React Testing Library Logo" width={24} height={24} />
+                        <span className="ml-1">React Testing Library</span>
                     </a>
                 </div>
             </div>
-        )
+        ),
     },
+
+    // Component Docs
     {
         category: (
-            <div className='flex space-x-2 ml-0 md:ml-5'>
-                Component Docs
-            </div>
+            <div className="flex space-x-2 ml-0 md:ml-5">Component Docs</div>
         ),
         tech: (
             <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
-                {/* Storybook */}
-                <div className='flex items-center whitespace-nowrap hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200 mr-0'>
-                    <a href="https://storybook.js.org/" className='flex items-center' target="_blank" rel="noopener noreferrer">
-                        <img src={storybookLogo} alt="Storybook Logo" width="24" height="24" className='inline-block' />
-                        <span>Storybook</span>
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://storybook.js.org/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img src={logos.storybookLogo} alt="Storybook Logo" width={24} height={24} />
+                        <span className="ml-1">Storybook</span>
                     </a>
                 </div>
             </div>
-        )
+        ),
     },
+
+    // Extras
     {
         category: (
             <div className='flex space-x-2 ml-0 md:ml-5'>
@@ -277,7 +623,9 @@ export const frontendTech: FrontendTechItem[] = [
         ),
         tech: (
             <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
-                ...
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <span className="ml-1">...</span>
+                </div>
             </div>
         )
     },
