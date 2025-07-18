@@ -16,7 +16,7 @@ export const TechTable = <T,>({ columns, items }: TechTableProps<T>) => {
             <table className="min-w-full divide-y divide-gray-200">
                 <thead className="bg-white">
                     <tr>
-                        {columns.map((col, colIndex) => (
+                        {columns.map((col) => (
                             <th
                                 key={col.header}
                                 scope="col"
