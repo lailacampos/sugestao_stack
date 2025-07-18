@@ -1,3 +1,4 @@
+// src/components/Table/TechTable.tsx
 export interface ColumnConfig<T> {
     header: string;
     key?: keyof T;
