@@ -2,6 +2,7 @@
 import { frontendColumns, backendColumns } from "../config/tableColumns";
 import { TechTable } from "../components/Table/TechTable";
 import { frontendTech, backendTech } from "../data/techData";
+import { GoArrowDown } from "react-icons/go";
 
 const HomePage: React.FC = () => {
     console.log(frontendColumns, backendColumns);
@@ -10,12 +11,75 @@ const HomePage: React.FC = () => {
             <div className="w-full md:max-w-4xl max-w-3xl">
                 <header className="mb-10 text-center lg:text-left">
                     <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-800">
-                        Tech Stack Overview
+                        Tech Stack
                     </h1>
                     <p className="mt-2 text-gray-600 max-w-2xl mx-auto lg:mx-0">
-                        Overview of frontend and backend technologies used in this project.
+                        Sugestões de tecnologias e padronizações
+                        para o desenvolvimento de sistema intermediário e da segunda versão do
+                        <a href="https://vestibulare.com.br/" className="text-blue-500 hover:underline ml-1" target="_blank" rel="noopener noreferrer">
+                            VA Vestibulare
+                        </a>
                     </p>
                 </header>
+
+                {/* Document Presentation */}
+                <section className="bg-white shadow-md rounded-lg p-6 mb-10">
+                    <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+                        Resumo da Arquitetura Proposta
+                    </h2>
+                    <p className="text-gray-700 mb-4">
+                        O frontend oferece interfaces ricas, o SSR entrega páginas prontas e
+                        otimizadas, o buffer garante respostas rápidas usando dados em
+                        memória, e o backend cuida da lógica, persistência e processamento
+                        assíncrono.
+                    </p>
+                    <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                        Fluxo principal
+                    </h3>
+                    <pre className="bg-gray-100 p-4 rounded mb-4 text-gray-700 overflow-x-auto">
+                        <code className="font-mono">
+                            <span className="text-blue-500 text-wrap">Frontend (React/Next.js)</span>
+                            <br />
+                            <GoArrowDown className="inline-block mx-2 text-gray-500" />
+                            <br />
+                            <span className="text-green-500 text-wrap">Server SSR (Next.js/Node.js)</span>
+                            <br />
+                            <GoArrowDown className="inline-block mx-2 text-gray-500" />
+                            <br />
+                            <span className="text-yellow-500 text-wrap">Buffer (Redis/Memcached)</span>
+                            <br />
+                            <GoArrowDown className="inline-block mx-2 text-gray-500" />
+                            <br />
+                            <span className="text-orange-500 text-wrap">Backend (Laravel, MySQL, Workers, etc)</span>
+                        </code>
+                    </pre>
+                    <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                        Descrição do Fluxo
+                    </h3>
+                    <ul className="list-disc list-inside text-gray-700 space-y-2">
+                        <li>
+                            <strong>Frontend:</strong> Utiliza React com Next.js e TypeScript;
+                            consome páginas e dados já otimizados, prontos para renderização e
+                            navegação rápida.
+                        </li>
+                        <li>
+                            <strong>Server SSR:</strong> Servidor de SSR renderiza as páginas no
+                            servidor com dados reais antes de enviá-las ao navegador;
+                            proporciona carregamento inicial mais rápido e SEO aprimorado;
+                            aplica lógicas de autenticação, pré-busca, cache e PWA.
+                        </li>
+                        <li>
+                            <strong>Buffer:</strong> Utiliza Redis ou Memcached como camada de
+                            cache em memória, armazenando dados semi-estáticos ou altamente
+                            requisitados para respostas rápidas.
+                        </li>
+                        <li>
+                            <strong>Backend:</strong> Responsável por regras de negócio,
+                            persistência definitiva, processamento assíncrono (jobs, IA,
+                            relatórios) e atualização do buffer, desacoplando-se da renderização.
+                        </li>
+                    </ul>
+                </section>
 
                 <div className="flex flex-col space-y-10">
                     {/* Frontend Section */}
@@ -23,12 +87,11 @@ const HomePage: React.FC = () => {
                         <div className="mb-4 flex justify-center lg:justify-start items-center">
                             <div className="h-1 w-12 bg-blue-500 rounded-full mr-3"></div>
                             <h2 className="text-2xl font-semibold text-gray-800">
-                                Frontend Technologies
+                                Tecnologias Frontend
                             </h2>
                         </div>
                         <p className="mb-6 text-gray-700 text-center lg:text-left">
-                            The frontend stack uses modern tools for fast, reliable, and
-                            maintainable UI development.
+                            Sugestões de stack para o frontend
                         </p>
                         <div className="bg-white shadow-md rounded-lg p-4 sm:p-6 overflow-x-auto">
                             <TechTable columns={frontendColumns} items={frontendTech} />
@@ -40,12 +103,11 @@ const HomePage: React.FC = () => {
                         <div className="mb-4 flex justify-center lg:justify-start items-center">
                             <div className="h-1 w-12 bg-green-500 rounded-full mr-3"></div>
                             <h2 className="text-2xl font-semibold text-gray-800">
-                                Backend Technologies
+                                Tecnologias Backend
                             </h2>
                         </div>
                         <p className="mb-6 text-gray-700 text-center lg:text-left">
-                            The backend stack provides a robust API foundation and powerful
-                            services.
+                            Sugestões de stack para o backend
                         </p>
                         <div className="bg-white shadow-md rounded-lg p-4 sm:p-6 overflow-x-auto">
                             <TechTable columns={backendColumns} items={backendTech} />
