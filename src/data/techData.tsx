@@ -1,3 +1,5 @@
+import TechTable from '../components/Table/TechTable';
+import { patternColumns } from '../config/tableColumns';
 import reactLogo from '../assets/react.svg';
 import reduxLogo from '../assets/redux.svg';
 import reactIconsLogo from '../assets/react-icons.svg';
@@ -5,6 +7,7 @@ import reactRouterLogo from '../assets/react-router.svg';
 import reactTestingLibraryLogo from '../assets/react-testing-library.svg';
 import storybookLogo from '../assets/storybook.svg';
 import { GoPlus } from "react-icons/go";
+import type React from 'react';
 
 export interface FrontendTechItem {
     category: React.ReactNode;
@@ -15,6 +18,31 @@ export interface BackendTechItem {
     layer: React.ReactNode;
     tech: React.ReactNode;
     justification: React.ReactNode;
+}
+
+export interface SSRTechItem {
+    layer: React.ReactNode;
+    tech: React.ReactNode;
+    justification: React.ReactNode;
+}
+
+export interface PatternItem {
+    id: string;
+    title: React.ReactNode;
+    shortDescription: React.ReactNode;
+    fullDescription: React.ReactNode;
+    comparison: React.ReactNode;
+}
+
+export interface PatternTableContent {
+    id: string;
+    rows: PatternRow[];
+}
+
+export interface PatternRow {
+    concept: React.ReactNode;
+    mvc: React.ReactNode;
+    pattern: React.ReactNode;
 }
 
 export const frontendTech: FrontendTechItem[] = [
@@ -229,14 +257,14 @@ export const frontendTech: FrontendTechItem[] = [
                 {/* Vitest + React Testing Library */}
                 <div className='flex items-center whitespace-nowrap hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200 mr-0'>
                     <a href="https://vitest.dev/" className='flex items-center' target="_blank" rel="noopener noreferrer">
-                    <img src="https://raw.githubusercontent.com/vitest-dev/vitest/3cb2c857057815274ed3b2d06fae8ad925c033f0/docs/public/logo.svg" alt="Vitest Logo" width="24" height="24" className='inline-block mr-1' />
+                        <img src="https://raw.githubusercontent.com/vitest-dev/vitest/3cb2c857057815274ed3b2d06fae8ad925c033f0/docs/public/logo.svg" alt="Vitest Logo" width="24" height="24" className='inline-block mr-1' />
                         <span>Vitest</span>
                     </a>
                     <GoPlus className='inline-block ml-3 md:visible invisible' />
                 </div>
                 <div className='flex items-center whitespace-nowrap hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200 mr-0'>
                     <a href="https://testing-library.com/docs/react-testing-library/intro/" className='flex items-center' target="_blank" rel="noopener noreferrer">
-                    <img src={reactTestingLibraryLogo} alt="React Testing Library Logo" width="24" height="24" className='inline-block mr-1' />
+                        <img src={reactTestingLibraryLogo} alt="React Testing Library Logo" width="24" height="24" className='inline-block mr-1' />
                         <span>React Testing Library</span>
                     </a>
                 </div>
@@ -289,4 +317,53 @@ export const backendTech: BackendTechItem[] = [
         justification:
             'Framework MVC maduro, com suporte a jobs, events, queues e ecossistema consolidado.',
     },
+];
+
+export const ssrTech: SSRTechItem[] = [
+    {
+        layer: 'Server SSR',
+        tech: (
+            <div className="flex items-center space-x-1 hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200">
+                <a href="https://nextjs.org/" className='flex items-center' target="_blank" rel="noopener noreferrer">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg" alt="Next.js Logo" width="24" height="24" />
+                    <span>Next.js</span>
+                </a>
+            </div>
+        ),
+        justification:
+            'Framework React com suporte a SSR, SSG e API routes, ideal para renderização de páginas dinâmicas.',
+    },
+];
+
+export const patternTable: PatternTableContent[] = [
+    {
+        id: 'hexagonal',
+        rows: [
+            {
+                concept: 'Separação de responsabilidade',
+                mvc: 'Controllers e Models misturam lógica de negócio e acesso a dados',
+                pattern: 'Domain puro, Application orquestra casos de uso, Infrastructure lida com detalhes técnicos',
+            },
+            {
+                concept: 'Testabilidade',
+                mvc: 'Testes de lógica acabam disparando requests HTTP ou acessando banco real',
+                pattern: 'Domain e Application podem ser testados isoladamente com repositórios falsos',
+            }
+        ]
+    }
+];
+
+export const patterns: PatternItem[] = [
+    {
+        id: 'hexagonal',
+        title: 'Camadas Limpas / Hexagonal',
+        shortDescription:
+            'Isola o core de negócio de detalhes de infraestrutura via Ports & Adapters.',
+        fullDescription:
+            'A Arquitetura Hexagonal (ou Ports & Adapters) organiza o código em três camadas principais: ' +
+            'Domain (regras puras), Application (casos de uso) e Infrastructure (implementações concretas), ' +
+            'permitindo trocar log de persistência, frameworks ou serviços externos sem tocar seu núcleo de negócio.',
+        comparison: <TechTable columns={patternColumns} items={patternTable[0].rows} />,
+    },
+    // você pode adicionar novos PatternItem para DDD, CQRS, etc.
 ];
