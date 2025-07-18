@@ -1,0 +1,11 @@
+export { default as daisyuiLogo } from './daisyui.svg';
+export { default as headlessuiLogo } from './headlessui.svg';
+export { default as nextjsLogo } from './nextjs.svg';
+export { default as reactIconsLogo } from './react-icons.svg';
+export { default as reactRouterLogo } from './react-router.svg';
+export { default as reactTestingLibraryLogo } from './react-testing-library.svg';
+export { default as reactLogo } from './react.svg';
+export { default as reduxLogo } from './redux.svg';
+export { default as storybookLogo } from './storybook.svg';
+export { default as tailwindLogo } from './tailwind.svg';
+export { default as typescriptLogo } from './typescript.svg';
