@@ -1,4 +1,4 @@
-import { FaCube, FaLayerGroup, FaProjectDiagram, FaPuzzlePiece } from 'react-icons/fa';
+import { FaBookOpen, FaCube, FaLayerGroup, FaProjectDiagram, FaPuzzlePiece } from 'react-icons/fa';
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 
 export interface PatternRow {
@@ -16,6 +16,7 @@ export interface PatternItem {
 };
 
 export const patterns: PatternItem[] = [
+    // Hexagonal Architecture
     {
         id: 'hexagonal',
         title: (
@@ -87,6 +88,108 @@ export const patterns: PatternItem[] = [
             },
             // mais linhas
         ]
+    },
+    // Domain‑Driven Design & Bounded Contexts
+    {
+        id: 'ddd',
+        title: (
+            <>
+                <FaBookOpen className="inline-block mr-1 text-indigo-500" />
+                Domain‑Driven Design & Bounded Contexts
+            </>
+        ),
+        shortDescription: (
+            <>
+                Modela o sistema segundo o domínio do negócio e isola subdomínios como{" "}
+                <strong>Contextos Limitados</strong>.
+            </>
+        ),
+        fullDescription: (
+            <div>
+                O DDD organiza o software em camadas como:
+                <ul className="list-disc list-inside ml-4 mt-2">
+                    <li>
+                        <strong>Domain</strong>: modelo rico com entidades, objetos de valor e
+                        lógica de negócio.
+                    </li>
+                    <li>
+                        <strong>Application</strong>: orquestra casos de uso sem regras de
+                        negócio.
+                    </li>
+                    <li>
+                        <strong>Infrastructure</strong>: adaptações para persistência, UI e
+                        integrações externas.
+                    </li>
+                </ul>
+                E define <em>Bounded Contexts</em> para que termos do negócio tenham
+                significado claro em cada subdomínio.
+            </div>
+        ),
+        comparisonRows: [
+            {
+                concept: (
+                    <>
+                        <FaLayerGroup className="inline-block mr-1 text-green-500" />
+                        Modelagem
+                    </>
+                ),
+                mvc: (
+                    <>
+                        Model <HiOutlineArrowNarrowRight className="inline-block mx-1" />
+                        atributos anêmicos sem regras de negócio explícitas.
+                    </>
+                ),
+                pattern: (
+                    <>
+                        Entidades e Value Objects encapsulam regras no <strong>Domain Model</strong>.
+                    </>
+                ),
+            },
+            {
+                concept: (
+                    <>
+                        <FaProjectDiagram className="inline-block mr-1 text-green-500" />
+                        Contextualização
+                    </>
+                ),
+                mvc: 'Um único conjunto de models/views serve todas as áreas da aplicação.',
+                pattern: (
+                    <>
+                        Cada Bounded Context tem seu próprio modelo e linguagem ubíqua,
+                        evitando ambiguidade.
+                    </>
+                ),
+            },
+            {
+                concept: (
+                    <>
+                        <FaPuzzlePiece className="inline-block mr-1 text-green-500" />
+                        Responsabilidade
+                    </>
+                ),
+                mvc: 'Controllers e models acumulam lógica de vários fluxos de negócio.',
+                pattern: (
+                    <>
+                        Serviços de domínio e Aggregate Roots concentram lógica de cada
+                        contexto isoladamente.
+                    </>
+                ),
+            },
+            {
+                concept: (
+                    <>
+                        <FaCube className="inline-block mr-1 text-green-500" />
+                        Evolução Incremental
+                    </>
+                ),
+                mvc: 'Mudanças em um model afetam toda a aplicação.',
+                pattern: (
+                    <>
+                        Bounded Contexts permitem evoluir partes isoladas sem impacto global.
+                    </>
+                ),
+            },
+        ],
     },
     // outros padrões
 ];

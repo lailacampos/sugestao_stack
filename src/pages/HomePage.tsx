@@ -1,7 +1,9 @@
 
-import { frontendColumns, backendColumns, ssrColumns } from "../config/tableColumns";
+// src/pages/HomePage.tsx
+import { frontendColumns, backendColumns, ssrColumns, getPatternColumns } from "../config/tableColumns";
 import { TechTable } from "../components/Table/TechTable";
-import { frontendTech, backendTech, ssrTech, patterns } from "../data/techData";
+import { frontendTech, backendTech, ssrTech } from "../data/techData";
+import { patterns } from "../data/patterns";
 import { GoArrowDown } from "react-icons/go";
 import softwareEngineeringIcon from "../assets/software_engineering.svg";
 
@@ -154,13 +156,14 @@ const HomePage: React.FC = () => {
                     </section>
 
                     {/* Patterns Section */}
-                    <section id="secao-padroes" className="mt-16">
+                    <section id="secao-padroes" className="flex-1">
                         <div className="mb-6 flex justify-center lg:justify-start items-center">
                             <div className="h-1 w-12 bg-yellow-500 rounded-full mr-3"></div>
                             <h2 className="text-2xl font-semibold text-gray-800">
                                 Padrões de Projeto & Arquitetura
                             </h2>
                         </div>
+
                         {/* Overview Cards */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
                             {patterns.map((pat) => (
@@ -179,10 +182,19 @@ const HomePage: React.FC = () => {
                         {/* Detailed Sections */}
                         {patterns.map((pat) => (
                             <div key={pat.id} id={`detalhe-${pat.id}`} className="mb-12">
-                                <h3 className="text-xl font-semibold text-gray-800 mb-4">{pat.title}</h3>
-                                <p className="text-gray-700 mb-6">{pat.fullDescription}</p>
+                                <h3 className="text-xl font-semibold text-gray-800 mb-4">
+                                    {pat.title}
+                                </h3>
+                                <p className="text-gray-700 mb-6">
+                                    {pat.fullDescription}
+                                </p>
                                 <div className="bg-white shadow-md rounded-lg p-4 sm:p-6 overflow-x-auto">
-                                    {pat.comparison}
+                                    <TechTable
+                                        columns={getPatternColumns(
+                                            typeof pat.title === 'string' ? pat.title : String(pat.title)
+                                        )}
+                                        items={pat.comparisonRows}
+                                    />
                                 </div>
                             </div>
                         ))}

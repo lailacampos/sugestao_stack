@@ -16,11 +16,16 @@ export const TechTable = <T,>({ columns, items }: TechTableProps<T>) => {
             <table className="min-w-full divide-y divide-gray-200">
                 <thead className="bg-white">
                     <tr>
-                        {columns.map((col) => (
+                        {columns.map((col, colIndex) => (
                             <th
                                 key={col.header}
                                 scope="col"
-                                className="px-6 py-3 text-center text-xs font-medium text-gray-700 uppercase tracking-wider"
+                                className={
+                                    [
+                                        'px-6 py-3 text-center text-xs font-medium text-gray-700 uppercase tracking-wider',
+                                        // colIndex === 0 ? 'lg:w-auto w-0.5' : 'w-auto',
+                                    ].join(' ')
+                                }
                             >
                                 {col.header}
                             </th>
@@ -34,7 +39,14 @@ export const TechTable = <T,>({ columns, items }: TechTableProps<T>) => {
                             className={rowIndex % 2 === 0 ? undefined : 'bg-gray-50'}
                         >
                             {columns.map((col) => (
-                                <td key={col.header} className="px-6 py-4 text-gray-800">
+                                <td 
+                                    key={col.header} 
+                                    className={
+                                        [
+                                            'px-6 py-4 text-gray-800',
+                                            // rowIndex === 0 ? 'lg:w-auto w-1/5' : 'w-auto',
+                                        ].join(' ')
+                                    }>
                                     {col.render
                                         ? col.render(item)
                                         : // eslint-disable-next-line @typescript-eslint/no-explicit-any
