@@ -3,6 +3,7 @@ import { frontendColumns, backendColumns, ssrColumns } from "../config/tableColu
 import { TechTable } from "../components/Table/TechTable";
 import { frontendTech, backendTech, ssrTech, patterns } from "../data/techData";
 import { GoArrowDown } from "react-icons/go";
+import softwareEngineeringIcon from "../assets/software_engineering.svg";
 
 const HomePage: React.FC = () => {
     return (
@@ -10,20 +11,20 @@ const HomePage: React.FC = () => {
             <div className="w-full md:max-w-4xl max-w-3xl">
                 {/* Header */}
                 <header className="mb-10 text-center lg:text-left">
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-800">
-                        Tech Stack
-                    </h1>
+                    <div className="flex flex-col lg:flex-row items-center mb-4">
+                        <img
+                            src={softwareEngineeringIcon}
+                            alt="Software Engineering Icon"
+                            className="lg:mx-0 w-16 h-16"
+                        />
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 ml-4">
+                            Tech Stack
+                        </h1>
+                    </div>
                     <p className="mt-2 text-gray-600 max-w-2xl mx-auto lg:mx-0">
                         Sugestões de tecnologias e padronizações
-                        para o desenvolvimento de sistema intermediário e da segunda versão do
-                        <a
-                            href="https://vestibulare.com.br/"
-                            className="text-blue-500 hover:underline ml-1"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            VA Vestibulare
-                        </a>
+                        para o desenvolvimento de sistema intermediário e avançado
+                        utilizando React, Next.js, SSR, Laravel e mais.
                     </p>
                 </header>
 
@@ -97,7 +98,7 @@ const HomePage: React.FC = () => {
                     <a href="#detalhes-ssr" className="text-blue-500 hover:underline">
                         Detalhes das Tecnologias SSR
                     </a>
-                    <a href="#detalhes-padroes" className="text-blue-500 hover:underline">
+                    <a href="#secao-padroes" className="text-blue-500 hover:underline">
                         Padrões de Projeto e Arquitetura
                     </a>
                 </nav>
@@ -105,7 +106,7 @@ const HomePage: React.FC = () => {
                 {/* Tech Sections */}
                 <div className="flex flex-col space-y-10">
                     {/* Frontend Section */}
-                    <section id="seção-frontend" className="flex-1">
+                    <section id="secao-frontend" className="flex-1">
                         <div className="mb-4 flex justify-center lg:justify-start items-center">
                             <div className="h-1 w-12 bg-blue-500 rounded-full mr-3"></div>
                             <h2 className="text-2xl font-semibold text-gray-800">
@@ -121,7 +122,7 @@ const HomePage: React.FC = () => {
                     </section>
 
                     {/* Backend Section */}
-                    <section id="seção-backend" className="flex-1">
+                    <section id="secao-backend" className="flex-1">
                         <div className="mb-4 flex justify-center lg:justify-start items-center">
                             <div className="h-1 w-12 bg-green-500 rounded-full mr-3"></div>
                             <h2 className="text-2xl font-semibold text-gray-800">
@@ -137,7 +138,7 @@ const HomePage: React.FC = () => {
                     </section>
 
                     {/* SSR Section */}
-                    <section id="seção-ssr" className="flex-1">
+                    <section id="secao-ssr" className="flex-1">
                         <div className="mb-4 flex justify-center lg:justify-start items-center">
                             <div className="h-1 w-12 bg-purple-500 rounded-full mr-3"></div>
                             <h2 className="text-2xl font-semibold text-gray-800">
@@ -153,7 +154,7 @@ const HomePage: React.FC = () => {
                     </section>
 
                     {/* Patterns Section */}
-                    <section id="seção-padroes" className="mt-16">
+                    <section id="secao-padroes" className="mt-16">
                         <div className="mb-6 flex justify-center lg:justify-start items-center">
                             <div className="h-1 w-12 bg-yellow-500 rounded-full mr-3"></div>
                             <h2 className="text-2xl font-semibold text-gray-800">
