@@ -1,5 +1,9 @@
+export { default as axiosLogo } from './axios.svg';
 export { default as daisyuiLogo } from './daisyui.svg';
+export { default as dexieLogo } from './dexie.svg';
+export { default as formikLogo } from './formik.svg';
 export { default as headlessuiLogo } from './headlessui.svg';
+export { default as eslintLogo } from './eslint.svg';
 export { default as nextjsLogo } from './nextjs.svg';
 export { default as reactIconsLogo } from './react-icons.svg';
 export { default as reactRouterLogo } from './react-router.svg';
@@ -9,3 +13,4 @@ export { default as reduxLogo } from './redux.svg';
 export { default as storybookLogo } from './storybook.svg';
 export { default as tailwindLogo } from './tailwind.svg';
 export { default as typescriptLogo } from './typescript.svg';
+export { default as vitestLogo } from './vitest.svg';
