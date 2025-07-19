@@ -2,7 +2,7 @@
 // src/pages/HomePage.tsx
 import { frontendColumns, backendColumns, ssrColumns, getPatternColumns } from "../config/tableColumns";
 import { TechTable } from "../components/Table/TechTable";
-import { frontendTech, backendTech, ssrTech } from "../data/techData";
+import { frontendTech, backendTech, ssrTech } from "../data/techTableData";
 import { patterns } from "../data/patterns";
 import { GoArrowDown } from "react-icons/go";
 import softwareEngineeringIcon from "../assets/software_engineering.svg";

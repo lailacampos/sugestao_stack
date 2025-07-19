@@ -1,6 +1,6 @@
 // src/config/tableColumns.ts
 import type { ColumnConfig } from '../components/Table/TechTable';
-import type { FrontendTechItem, BackendTechItem, SSRTechItem } from '../data/techData';
+import type { FrontendTechItem, BackendTechItem, SSRTechItem } from '../data/techTableData';
 import type { PatternRow } from '../data/patterns';
 
 export const frontendColumns: ColumnConfig<FrontendTechItem>[] = [
