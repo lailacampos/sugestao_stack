@@ -1,4 +1,4 @@
-// src/data/techData.tsx
+// src/data/techTableData.tsx
 import { GoPlus } from "react-icons/go";
 import * as logos from '../assets/logos/logos';
 
@@ -29,6 +29,7 @@ export const frontendTech: FrontendTechItem[] = [
         ),
         tech: (
             <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
+
                 {/* React */}
                 <div className='flex items-center whitespace-nowrap mr-0'>
                     <a href="https://reactjs.org/"
@@ -75,6 +76,7 @@ export const frontendTech: FrontendTechItem[] = [
         ),
         tech: (
             <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
+
                 {/* Redux Toolkit */}
                 <div className='flex items-center whitespace-nowrap mr-0'>
                     <a href="https://redux-toolkit.js.org/"
@@ -111,6 +113,7 @@ export const frontendTech: FrontendTechItem[] = [
         ),
         tech: (
             <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
+
                 {/* Tailwind CSS */}
                 <div className="flex items-center whitespace-nowrap mr-0">
                     <a
@@ -180,6 +183,7 @@ export const frontendTech: FrontendTechItem[] = [
         ),
         tech: (
             <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
+
                 {/* Framer Motion */}
                 <div className="flex items-center whitespace-nowrap mr-0">
                     <a
@@ -248,6 +252,8 @@ export const frontendTech: FrontendTechItem[] = [
         category: <div className="flex space-x-2 ml-0 md:ml-5">Cache Offline & IndexedDB</div>,
         tech: (
             <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
+
+                {/* Dexie.js */}
                 <div className="flex items-center whitespace-nowrap mr-0">
                     <a
                         href="https://dexie.org/"
@@ -272,6 +278,7 @@ export const frontendTech: FrontendTechItem[] = [
         ),
         tech: (
             <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
+
                 {/* Formik */}
                 <div className="flex items-center whitespace-nowrap mr-0">
                     <a
@@ -340,7 +347,8 @@ export const frontendTech: FrontendTechItem[] = [
             <div className="flex space-x-2 ml-0 md:ml-5">SSR/SEO</div>
         ),
         tech: (
-            <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
+            <div className="flex flex-col space-y-2 md:flex-col md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
+
                 {/* next-seo */}
                 <div className="flex items-center whitespace-nowrap mr-0">
                     <a
@@ -351,8 +359,9 @@ export const frontendTech: FrontendTechItem[] = [
                     >
                         <span>next-seo</span>
                     </a>
-                    <GoPlus className="inline-block md:visible invisible" />
+                    {/* <GoPlus className="inline-block md:visible invisible" /> */}
                 </div>
+
                 {/* next-optimized-images */}
                 <div className="flex items-center whitespace-nowrap mr-0">
                     <a
@@ -363,8 +372,9 @@ export const frontendTech: FrontendTechItem[] = [
                     >
                         <span>next-optimized-images</span>
                     </a>
-                    <GoPlus className="inline-block md:visible invisible" />
+                    {/* <GoPlus className="inline-block md:visible invisible" /> */}
                 </div>
+
                 {/* next-pwa */}
                 <div className="flex items-center whitespace-nowrap mr-0">
                     <a
@@ -375,8 +385,9 @@ export const frontendTech: FrontendTechItem[] = [
                     >
                         <span>next-pwa</span>
                     </a>
-                    <GoPlus className="inline-block md:visible invisible" />
+                    {/* <GoPlus className="inline-block md:visible invisible" /> */}
                 </div>
+
                 {/* next-auth */}
                 <div className="flex items-center whitespace-nowrap mr-0">
                     <a
@@ -433,6 +444,7 @@ export const frontendTech: FrontendTechItem[] = [
         ),
         tech: (
             <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
+
                 {/* Sentry */}
                 <div className="flex items-center whitespace-nowrap mr-0">
                     <a
@@ -441,10 +453,18 @@ export const frontendTech: FrontendTechItem[] = [
                         target="_blank"
                         rel="noopener noreferrer"
                     >
+                        <img
+                            src={logos.sentryLogo}
+                            alt="Sentry Logo"
+                            width={24}
+                            height={24}
+                            className="inline-block"
+                        />
                         <span>Sentry</span>
                     </a>
                     <GoPlus className="inline-block md:visible invisible" />
                 </div>
+
                 {/* LogRocket */}
                 <div className="flex items-center whitespace-nowrap mr-0">
                     <a
@@ -453,10 +473,18 @@ export const frontendTech: FrontendTechItem[] = [
                         target="_blank"
                         rel="noopener noreferrer"
                     >
+                        <img
+                            src="https://cdn.brandfetch.io/idbqwJEFOO/w/180/h/180/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1752074006185"
+                            alt="LogRocket Logo"
+                            width={24}
+                            height={24}
+                            className="inline-block"
+                        />
                         <span>LogRocket</span>
                     </a>
                     <GoPlus className="inline-block md:visible invisible" />
                 </div>
+
                 {/* Datadog RUM */}
                 <div className="flex items-center whitespace-nowrap mr-0">
                     <a
@@ -479,6 +507,7 @@ export const frontendTech: FrontendTechItem[] = [
         ),
         tech: (
             <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
+
                 {/* ESLint */}
                 <div className="flex items-center whitespace-nowrap mr-0">
                     <a
@@ -492,11 +521,13 @@ export const frontendTech: FrontendTechItem[] = [
                             alt="ESLint"
                             width={24}
                             height={24}
+                            className="mr-1"
                         />
                         <span>ESLint</span>
                     </a>
                     <GoPlus className="inline-block md:visible invisible" />
                 </div>
+
                 {/* Prettier */}
                 <div className="flex items-center whitespace-nowrap mr-0">
                     <a
@@ -507,7 +538,7 @@ export const frontendTech: FrontendTechItem[] = [
                     >
                         <img
                             src="https://prettier.io/icon.png"
-                            alt="ESLint"
+                            alt="Prettier Logo"
                             width={24}
                             height={24}
                         />
@@ -599,6 +630,8 @@ export const frontendTech: FrontendTechItem[] = [
         ),
         tech: (
             <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
+
+                {/* Storybook */}
                 <div className="flex items-center whitespace-nowrap mr-0">
                     <a
                         href="https://storybook.js.org/"
@@ -641,6 +674,8 @@ export const backendTech: BackendTechItem[] = [
         ),
         tech: (
             <div className="flex flex-col space-y-2 md:flex-row md:space-x-3 md:justify-center md:items-center md:w-full w-min">
+
+                {/* Laravel */}
                 <div className="flex items-center whitespace-nowrap mr-0">
                     <a
                         href="https://laravel.com/"
@@ -676,6 +711,8 @@ export const backendTech: BackendTechItem[] = [
         ),
         tech: (
             <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
+
+                {/* Sanctum */}
                 <div className="flex items-center whitespace-nowrap mr-0">
                     <a
                         href="https://laravel.com/docs/sanctum"
@@ -705,6 +742,8 @@ export const backendTech: BackendTechItem[] = [
         ),
         tech: (
             <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
+
+                {/* Spatie laravel-permission */}
                 <div className="flex items-center whitespace-nowrap mr-0">
                     <a
                         href="https://spatie.be/docs/laravel-permission"
@@ -892,9 +931,27 @@ export const backendTech: BackendTechItem[] = [
                             height={24}
                             className="inline-block"
                         />
-                        <span className="ml-1">FastAPI + PyTorch/TensorFlow</span>
+                        <span className="ml-1">FastAPI</span>
                     </a>
-                    <GoPlus className="inline-block md:visible invisible" />
+                </div>
+
+                {/* PyTorch/TensorFlow */}
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://pytorch.org/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src={logos.pytorchLogo}
+                            alt="PyTorch Logo"
+                            width={24}
+                            height={24}
+                            className="inline-block"
+                        />
+                        <span className="ml-1">PyTorch/TensorFlow</span>
+                    </a>
                 </div>
 
                 {/* AWS Rekognition */}
@@ -934,6 +991,7 @@ export const backendTech: BackendTechItem[] = [
         ),
         tech: (
             <div className="flex flex-col space-y-2 md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
+
                 {/* ElasticSearch */}
                 <div className="flex items-center whitespace-nowrap mr-0">
                     <a
@@ -953,7 +1011,8 @@ export const backendTech: BackendTechItem[] = [
                         {/* <span className="ml-1">ElasticSearch</span> */}
                     </a>
                 </div>
-                {/* Kibana/Grafana */}
+
+                {/* Kibana */}
                 <div className="flex items-center whitespace-nowrap mr-0">
                     <a
                         href="https://grafana.com/"
@@ -971,6 +1030,8 @@ export const backendTech: BackendTechItem[] = [
                         <span className="ml-1">Kibana</span>
                     </a>
                 </div>
+
+                {/* Grafana */}
                 <div className="flex items-center whitespace-nowrap mr-0">
                     <a
                         href="https://grafana.com/"
@@ -1052,6 +1113,7 @@ export const backendTech: BackendTechItem[] = [
         ),
         tech: (
             <div className="flex flex-col space-y-2 md:space-x-3 md:justify-center md:items-center md:w-full w-min">
+
                 {/* Laravel Telescope */}
                 <div className="flex items-center whitespace-nowrap m-0">
                     <a
@@ -1063,6 +1125,7 @@ export const backendTech: BackendTechItem[] = [
                         <span className="ml-1">Telescope</span>
                     </a>
                 </div>
+
                 {/* Sentry */}
                 <div className="flex items-center whitespace-nowrap m-0">
                     <a
@@ -1081,6 +1144,7 @@ export const backendTech: BackendTechItem[] = [
                         <span className="ml-1">Sentry</span>
                     </a>
                 </div>
+
                 {/* NewRelic */}
                 <div className="flex items-center whitespace-nowrap m-0">
                     <a
@@ -1118,11 +1182,12 @@ export const backendTech: BackendTechItem[] = [
         ),
         tech: (
             <div className="flex flex-col space-y-2 md:flex-row md:space-x-3 md:justify-center md:items-center md:w-full w-min">
+
                 {/* PHPUnit */}
                 <div className="flex md:items-center whitespace-nowrap m-0">
                     <a
                         href="https://phpunit.de/"
-                        className="flex md:items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200 md:w-auto w-18"
+                        className="flex md:items-center hover:bg-green-100 rounded-lg transition-colors duration-200 md:w-auto w-18"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -1137,15 +1202,15 @@ export const backendTech: BackendTechItem[] = [
                     </a>
                     <GoPlus className="inline-block md:visible invisible" />
                 </div>
+
                 {/* Pest */}
                 <div className="flex items-center whitespace-nowrap m-0">
                     <a
                         href="https://pestphp.com/"
-                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200 md:w-auto w-18"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-4 py-3 transition-colors duration-200 md:w-auto w-18"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        {/* <figure className="shadow-white flex items-center justify-center w-10 h-10 p-1 bg-black rounded-lg shadow-2xl"> */}
                         <img
                             src={logos.pestLogo}
                             alt="Pest Logo"
@@ -1153,7 +1218,6 @@ export const backendTech: BackendTechItem[] = [
                             height={52}
                             className="inline-block"
                         />
-                        {/* </figure> */}
                         {/* <span className="ml-1">Pest</span> */}
                     </a>
                 </div>
@@ -1175,6 +1239,7 @@ export const backendTech: BackendTechItem[] = [
         ),
         tech: (
             <div className="flex flex-col space-y-2 md:flex-row md:space-x-3 md:justify-center md:items-center md:w-full w-min">
+
                 {/* GitHub Actions / GitLab CI */}
                 <div className="flex items-center whitespace-nowrap m-0">
                     <a
@@ -1190,25 +1255,685 @@ export const backendTech: BackendTechItem[] = [
         ),
         justification: (
             <span className="text-gray-700">
-                Pipelines automatizadas no GitHub/GitLab e deploy zero-downtime via Envoyer,
-                Forge ou contêineres orquestrados em Kubernetes.
+                Pipelines de build, teste e deploy automáticas com GitHub Actions ou
+                GitLab CI, acelerando entregas e garantindo qualidade.
             </span>
         ),
     },
 ];
 
 export const ssrTech: SSRTechItem[] = [
+    // Framework SSR
     {
-        layer: 'Server SSR',
-        tech: (
-            <div className="flex items-center space-x-1 hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200">
-                <a href="https://nextjs.org/" className='flex items-center' target="_blank" rel="noopener noreferrer">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg" alt="Next.js Logo" width="24" height="24" />
-                    <span>Next.js</span>
-                </a>
+        layer: (
+            <div className="flex items-center whitespace-nowrap mr-0">
+                Framework SSR
             </div>
         ),
-        justification:
-            'Framework React com suporte a SSR, SSG e API routes, ideal para renderização de páginas dinâmicas.',
+        tech: (
+            <div className="flex flex-col space-y-2 md:flex-row md:space-x-3 md:justify-center md:items-center md:w-full w-min">
+
+                {/* Next.js */}
+                <div className="flex items-center whitespace-nowrap m-0">
+                    <a
+                        href="https://nextjs.org/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src={logos.nextjsLogo}
+                            alt="Next.js Logo"
+                            width={24}
+                            height={24}
+                            className="inline-block"
+                        />
+                        <span className="ml-1">Next.js (Node.js)</span>
+                    </a>
+                </div>
+            </div>
+        ),
+        justification: (
+            <span className="text-gray-700">
+                Padrão do mercado para SSR/SSG com React.
+                Next.js entrega SSR nativo em Node, integrando roteamento e data-fetching
+                de forma unificada para SEO (Search Engine Optimization) e performance.
+            </span>
+        ),
+    },
+
+    // Linguagem e Execução
+    {
+        layer: (
+            <div className="flex items-center whitespace-nowrap mr-0">
+                Linguagem e Execução
+            </div>
+        ),
+        tech: (
+            <div className="flex flex-col space-y-2 md:flex-row md:space-x-3 md:justify-center md:items-center md:w-full w-min">
+
+                {/* Node.js */}
+                <div className="flex items-center whitespace-nowrap m-0">
+                    <a
+                        href="https://nodejs.org/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src={logos.nodejsLogo}
+                            alt="Node.js Logo"
+                            width={24}
+                            height={24}
+                            className="inline-block"
+                        />
+                        <span className="ml-1">Node.js</span>
+                    </a>
+                </div>
+            </div>
+        ),
+        justification: (
+            <span className="text-gray-700">
+                Plataforma madura e performática para executar o SSR, com vasto ecossistema
+                de módulos e integração com Next.js.
+            </span>
+        ),
+    },
+
+    // Fetching/HTTP Client
+    {
+        layer: (
+            <div className="flex items-center whitespace-nowrap mr-0">
+                Fetching/HTTP Client
+            </div>
+        ),
+        tech: (
+            <div className="flex flex-col space-y-2 md:space-x-3 md:justify-center md:items-center md:w-full w-min">
+
+                {/* Axios */}
+                <div className="flex items-center whitespace-nowrap m-0">
+                    <a
+                        href="https://axios-http.com/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src={logos.axiosLogo}
+                            alt="Axios Logo"
+                            width={28}
+                            height={28}
+                            className="inline-block"
+                        />
+                        <span className="ml-1">Axios</span>
+                    </a>
+                </div>
+
+                {/* Fetch API */}
+                <div className="flex items-center whitespace-nowrap m-0">
+                    <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span className="ml-1">Fetch API</span>
+                    </a>
+                </div>
+            </div>
+        ),
+        justification: (
+            <span className="text-gray-700">
+                Uso de Axios para request avançados e polyfill fetch nativo para chamadas
+                simplicadas, garantindo consistência entre client e server.
+            </span>
+        ),
+    },
+
+    // Buffer/Cache Client
+    {
+        layer: (
+            <div className="flex items-center whitespace-nowrap mr-0">
+                Buffer/Cache Client
+            </div>
+        ),
+        tech: (
+            <div className="flex flex-col space-y-2 md:flex-row md:space-x-3 md:justify-center md:items-center md:w-max w-min">
+
+                {/* ioredis */}
+                <div className="flex items-center whitespace-nowrap m-0">
+                    <a
+                        href="https://github.com/luin/ioredis"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src={logos.redisLogo}
+                            alt="ioredis Logo"
+                            width={24}
+                            height={24}
+                            className="inline-block"
+                        />
+                        <span className="ml-1">ioredis</span>
+                    </a>
+                    <GoPlus className="inline-block md:visible invisible md-ml-4 m-0" />
+                </div>
+
+                {/* node-redis */}
+                <div className="flex items-center whitespace-nowrap m-0">
+                    <a
+                        href="https://github.com/redis/node-redis"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span className="ml-1">node-redis</span>
+                    </a>
+                </div>
+            </div>
+        ),
+        justification: (
+            <span className="text-gray-700">
+                Clientes de Redis otimizados para cache em memória, usados pelo SSR
+                para reduzir latência e carga no banco primário.
+            </span>
+        ),
+    },
+
+    // Auth/Session
+    {
+        layer: (
+            <div className="flex items-center whitespace-nowrap mr-0">
+                Auth/Session
+            </div>
+        ),
+        tech: (
+            <div className="flex flex-col space-y-2 md:flex-row md:space-x-3 md:justify-center md:items-center md:w-full w-min">
+
+                {/* next-auth */}
+                <div className="flex items-center whitespace-nowrap m-0">
+                    <a
+                        href="https://next-auth.js.org/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src={logos.nextAuthLogo}
+                            alt="next-auth Logo"
+                            width={24}
+                            height={24}
+                            className="inline-block"
+                        />
+                        <span className="ml-1">next-auth</span>
+                    </a>
+                </div>
+            </div>
+        ),
+        justification: (
+            <span className="text-gray-700">
+                Gerencia sessões e provedores de login em SSR, com callbacks no servidor
+                e suporte a JWT ou cookies, integrando perfeitamente com Next.js.
+            </span>
+        ),
+    },
+
+    // SEO (Search Engine Optimization)
+    {
+        layer: (
+            <div className="flex items-center mr-0">
+                SEO (Search Engine Optimization)
+            </div>
+        ),
+        tech: (
+            <div className="flex flex-col space-y-2 md:flex-row md:space-x-3 md:justify-center md:items-center md:w-full w-min">
+
+                {/* next-seo */}
+                <div className="flex items-center whitespace-nowrap m-0">
+                    <a
+                        href="https://github.com/garmeeh/next-seo"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span className="ml-1">next-seo</span>
+                    </a>
+                </div>
+            </div>
+        ),
+        justification: (
+            <span className="text-gray-700">
+                SEO avançado para SSR. Simplifica meta tags, Open Graph e sitemaps em Next.js, melhorando
+                visibilidade e compartilhamento.
+            </span>
+        ),
+    },
+
+    // Otimização de Imagens
+    {
+        layer: (
+            <div className="flex items-center mr-0">
+                Otimização de Imagens
+            </div>
+        ),
+        tech: (
+            <div className="flex flex-col space-y-2 md:flex-col md:space-x-3 md:justify-center md:items-center md:w-full w-min">
+
+                {/* next-optimized-images */}
+                <div className="flex items-center whitespace-nowrap m-0">
+                    <a
+                        href="https://github.com/cyrilwanner/next-optimized-images"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span className="ml-1">next-optimized-images</span>
+                    </a>
+                </div>
+
+                {/* sharp */}
+                <div className="flex items-center whitespace-nowrap m-0">
+                    <a
+                        href="https://sharp.pixelplumbing.com/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src={logos.sharpLogo}
+                            alt="sharp Logo"
+                            width={24}
+                            height={24}
+                            className="inline-block"
+                        />
+                        <span className="ml-1">sharp</span>
+                    </a>
+                </div>
+            </div>
+        ),
+        justification: (
+            <span className="text-gray-700">
+                Compressão e dimensionamento de imagens no build/SSR, reduzindo bundle e
+                acelerando carregamento.
+            </span>
+        ),
+    },
+
+    // PWA (Progressive Web App)
+    {
+        layer: (
+            <div className="flex items-center mr-0">
+                PWA (Aplicativo Web Progressivo)
+            </div>
+        ),
+        tech: (
+            <div className="flex flex-col space-y-2 md:flex-row md:space-x-3 md:justify-center md:items-center md:w-full w-min">
+
+                {/* next-pwa */}
+                <div className="flex items-center whitespace-nowrap m-0">
+                    <a
+                        href="https://github.com/shadowwalker/next-pwa"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span className="ml-1">next-pwa</span>
+                    </a>
+                </div>
+            </div>
+        ),
+        justification: (
+            <span className="text-gray-700">
+                Habilita instalação como app, service workers e cache offline em Next.js, com cache offline e push notifications, melhorando UX e performance.
+            </span>
+        ),
+    },
+
+    // Observabilidade/Erros
+    {
+        layer: (
+            <div className="flex items-center whitespace-nowrap mr-0">
+                Observabilidade/Erros
+            </div>
+        ),
+        tech: (
+            <div className="flex flex-col space-y-2 md:flex-row md:space-x-3 md:justify-center md:items-center md:w-full w-min">
+
+                {/* Sentry */}
+                <div className="flex items-center whitespace-nowrap m-0">
+                    <a
+                        href="https://sentry.io/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src={logos.sentryLogo}
+                            alt="Sentry Logo"
+                            width={24}
+                            height={24}
+                            className="inline-block"
+                        />
+                        <span className="ml-1">Sentry</span>
+                    </a>
+                    <GoPlus className="inline-block md:visible invisible" />
+                </div>
+
+                {/* LogRocket */}
+                <div className="flex items-center whitespace-nowrap m-0">
+                    <a
+                        href="https://logrocket.com/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src="https://cdn.brandfetch.io/idbqwJEFOO/w/180/h/180/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1752074006185"
+                            alt="LogRocket Logo"
+                            width={24}
+                            height={24}
+                            className="inline-block"
+                        />
+                        <span className="ml-1">LogRocket</span>
+                    </a>
+                </div>
+            </div>
+        ),
+        justification: (
+            <span className="text-gray-700">
+                Captura e correlação de erros em tempo real com Sentry e reprodução de sessão
+                do usuário com LogRocket, garantindo diagnóstico rápido em SSR.
+            </span>
+        ),
+    },
+
+    // Monitoramento & Logs
+    {
+        layer: (
+            <div className="flex items-center whitespace-nowrap mr-0">
+                Monitoramento & Logs
+            </div>
+        ),
+        tech: (
+            <div className="flex flex-col space-y-2 md:flex-row md:space-x-3 md:justify-center md:items-center md:w-full w-min">
+
+                {/* Winston */}
+                <div className="flex items-center whitespace-nowrap m-0">
+                    <a
+                        href="https://github.com/winstonjs/winston"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span className="ml-1">Winston</span>
+                    </a>
+                    <GoPlus className="inline-block md:visible invisible" />
+                </div>
+
+                {/* pino */}
+                <div className="flex items-center whitespace-nowrap m-0">
+                    <a
+                        href="https://getpino.io/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src={logos.pinoLogo}
+                            alt="Pino Logo"
+                            width={24}
+                            height={24}
+                            className="inline-block"
+                        />
+                        <span className="ml-1">pino</span>
+                    </a>
+                </div>
+            </div>
+        ),
+        justification: (
+            <span className="text-gray-700">
+                Winston para logs estruturados em desenvolvimento e pino para alta performance
+                em produção, mantendo rastreabilidade durante SSR.
+            </span>
+        ),
+    },
+
+    // Lint & Formatting
+    {
+        layer: (
+            <div className="flex items-center whitespace-nowrap mr-0">
+                Lint & Formatting
+            </div>
+        ),
+        tech: (
+            <div className="flex flex-col space-y-2 md:flex-row md:space-x-3 md:justify-center md:items-center md:w-full w-min">
+
+                {/* ESLint */}
+                <div className="flex items-center whitespace-nowrap m-0">
+                    <a
+                        href="https://eslint.org/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/e/e3/ESLint_logo.svg"
+                            alt="ESLint"
+                            width={24}
+                            height={24}
+                        />
+                        <span className="ml-1">ESLint</span>
+                    </a>
+                    <GoPlus className="inline-block md:visible invisible" />
+                </div>
+
+                {/* Prettier */}
+                <div className="flex items-center whitespace-nowrap m-0">
+                    <a
+                        href="https://prettier.io/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src="https://prettier.io/icon.png"
+                            alt="Prettier Logo"
+                            width={24}
+                            height={24}
+                        />
+                        <span className="ml-1">Prettier</span>
+                    </a>
+                </div>
+            </div>
+        ),
+        justification: (
+            <span className="text-gray-700">
+                Garantia de código consistente com ESLint e formatação automática com Prettier,
+                integrados ao pipeline SSR.
+            </span>
+        ),
+    },
+
+    // Testes
+    {
+        layer: (
+            <div className="flex items-center whitespace-nowrap mr-0">
+                Testes
+            </div>
+        ),
+        tech: (
+            <div className="flex flex-col space-y-2 md:flex-col md:space-x-3 md:justify-center md:items-center md:w-full w-min">
+
+                {/* Vitest/Jest */}
+                <div className="flex items-center whitespace-nowrap m-0">
+                    <a
+                        href="https://vitest.dev/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src={logos.vitestLogo}
+                            alt="Vitest Logo"
+                            width={24}
+                            height={24}
+                            className="inline-block"
+                        />
+                        <span className="ml-1">Vitest / Jest</span>
+                    </a>
+                </div>
+
+                {/* Testing Library */}
+                <div className="flex items-center whitespace-nowrap m-0">
+                    <a
+                        href="https://testing-library.com/docs/react-testing-library/intro/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src={logos.reactTestingLibraryLogo}
+                            alt="React Testing Library Logo"
+                            width={24}
+                            height={24}
+                            className="inline-block"
+                        />
+                        <span className="ml-1">Testing Library</span>
+                    </a>
+                </div>
+            </div>
+        ),
+        justification: (
+            <span className="text-gray-700">
+                Testes isolados de componentes e lógica SSR com Vitest/Jest e
+                simulações de DOM via Testing Library, garantindo estabilidade.
+            </span>
+        ),
+    },
+
+    // Deploy & Infra
+    {
+        layer: (
+            <div className="flex items-center whitespace-nowrap mr-0">
+                Deploy & Infra
+            </div>
+        ),
+        tech: (
+            <div className="flex flex-col space-y-2 md:flex-col md:space-x-3 md:justify-center md:items-center md:w-full w-min">
+
+                {/* PM2 */}
+                <div className="flex items-center whitespace-nowrap m-0">
+                    <a
+                        href="https://pm2.keymetrics.io/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src={logos.pm2Logo}
+                            alt="PM2 Logo"
+                            width={24}
+                            height={24}
+                            className="inline-block"
+                        />
+                        <span className="ml-1">PM2</span>
+                    </a>
+                </div>
+
+                {/* Docker */}
+                <div className="flex items-center whitespace-nowrap m-0">
+                    <a
+                        href="https://www.docker.com/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src={logos.dockerLogo}
+                            alt="Docker Logo"
+                            width={24}
+                            height={24}
+                            className="inline-block"
+                        />
+                        <span className="ml-1">Docker</span>
+                    </a>
+                </div>
+
+                {/* Kubernetes */}
+                <div className="flex items-center whitespace-nowrap m-0">
+                    <a
+                        href="https://kubernetes.io/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src={logos.kubernetesLogo}
+                            alt="Kubernetes Logo"
+                            width={24}
+                            height={24}
+                            className="inline-block"
+                        />
+                        <span className="ml-1">Kubernetes</span>
+                    </a>
+                </div>
+
+                {/* Nginx */}
+                <div className="flex items-center whitespace-nowrap m-0">
+                    <a
+                        href="https://nginx.org/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src={logos.nginxLogo}
+                            alt="Nginx Logo"
+                            width={24}
+                            height={24}
+                            className="inline-block"
+                        />
+                        <span className="ml-1">Nginx</span>
+                    </a>
+                </div>
+            </div>
+        ),
+        justification: (
+            <span className="text-gray-700">
+                Processo de deploy robusto com PM2, monitoramento de processos Node/SSR, containerização via Docker, orquestração
+                em Kubernetes e proxy reverso com Nginx para alta disponibilidade.
+            </span>
+        ),
+    },
+
+    // CI/CD
+    {
+        layer: (
+            <div className="flex items-center whitespace-nowrap mr-0">
+                CI/CD
+            </div>
+        ),
+        tech: (
+            <div className="flex flex-col space-y-2 md:flex-row md:space-x-3 md:justify-center md:items-center md:w-full w-min">
+                {/* GitHub Actions / GitLab CI */}
+                <div className="flex items-center whitespace-nowrap m-0">
+                    <a
+                        href="https://github.com/features/actions"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span className="ml-1">GitHub Actions / GitLab CI</span>
+                    </a>
+                </div>
+            </div>
+        ),
+        justification: (
+            <span className="text-gray-700">
+                Pipelines de build, teste e deploy automáticas com GitHub Actions ou
+                GitLab CI, acelerando entregas e garantindo qualidade.
+            </span>
+        ),
     },
 ];
