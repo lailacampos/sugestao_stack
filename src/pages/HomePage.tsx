@@ -182,7 +182,7 @@ const HomePage: React.FC = () => {
                         {/* Detailed Sections */}
                         {patterns.map((pat) => (
                             <div key={pat.id} id={`detalhe-${pat.id}`} className="mb-12">
-                                <h3 className="text-xl font-semibold text-gray-800 mb-4">
+                                <h3 className="text-xl font-semibold text-gray-800 mb-4 pt-4">
                                     {pat.title}
                                 </h3>
                                 <div className="text-gray-700 mb-6">
