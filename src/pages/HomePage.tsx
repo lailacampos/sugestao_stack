@@ -30,6 +30,34 @@ const HomePage: React.FC = () => {
                     </p>
                 </header>
 
+                {/* Quick Navigation Links */}
+                <nav className="mb-10 flex flex-wrap justify-center lg:justify-start space-x-6">
+                    <a
+                        href="#secao-frontend"
+                        className="text-blue-500 hover:underline font-medium"
+                    >
+                        Frontend
+                    </a>
+                    <a
+                        href="#secao-backend"
+                        className="text-green-500 hover:underline font-medium"
+                    >
+                        Backend
+                    </a>
+                    <a
+                        href="#secao-ssr"
+                        className="text-purple-500 hover:underline font-medium"
+                    >
+                        SSR
+                    </a>
+                    <a
+                        href="#secao-padroes"
+                        className="text-yellow-500 hover:underline font-medium"
+                    >
+                        Padrões
+                    </a>
+                </nav>
+
                 {/* Document Presentation */}
                 <section id="resumo" className="bg-white shadow-md rounded-lg p-6 mb-10">
                     <h2 className="text-2xl font-semibold text-gray-800 mb-4">
@@ -89,27 +117,11 @@ const HomePage: React.FC = () => {
                     </ul>
                 </section>
 
-                {/* Links para seções detalhadas */}
-                <nav className="mb-10 flex flex-col space-y-2">
-                    <a href="#detalhes-frontend" className="text-blue-500 hover:underline">
-                        Detalhes das Tecnologias Frontend
-                    </a>
-                    <a href="#detalhes-backend" className="text-blue-500 hover:underline">
-                        Detalhes das Tecnologias Backend
-                    </a>
-                    <a href="#detalhes-ssr" className="text-blue-500 hover:underline">
-                        Detalhes das Tecnologias SSR
-                    </a>
-                    <a href="#secao-padroes" className="text-blue-500 hover:underline">
-                        Padrões de Projeto e Arquitetura
-                    </a>
-                </nav>
-
                 {/* Tech Sections */}
                 <div className="flex flex-col space-y-10">
                     {/* Frontend Section */}
                     <section id="secao-frontend" className="flex-1">
-                        <div className="mb-4 flex justify-center lg:justify-start items-center">
+                        <div className="mb-4 flex justify-center lg:justify-start items-center pt-4">
                             <div className="h-1 w-12 bg-blue-500 rounded-full mr-3"></div>
                             <h2 className="text-2xl font-semibold text-gray-800">
                                 Tecnologias Frontend
@@ -125,7 +137,7 @@ const HomePage: React.FC = () => {
 
                     {/* Backend Section */}
                     <section id="secao-backend" className="flex-1">
-                        <div className="mb-4 flex justify-center lg:justify-start items-center">
+                        <div className="mb-4 flex justify-center lg:justify-start items-center pt-4">
                             <div className="h-1 w-12 bg-green-500 rounded-full mr-3"></div>
                             <h2 className="text-2xl font-semibold text-gray-800">
                                 Tecnologias Backend
@@ -141,7 +153,7 @@ const HomePage: React.FC = () => {
 
                     {/* SSR Section */}
                     <section id="secao-ssr" className="flex-1">
-                        <div className="mb-4 flex justify-center lg:justify-start items-center">
+                        <div className="mb-4 flex justify-center lg:justify-start items-center pt-4">
                             <div className="h-1 w-12 bg-purple-500 rounded-full mr-3"></div>
                             <h2 className="text-2xl font-semibold text-gray-800">
                                 Tecnologias SSR
@@ -157,7 +169,7 @@ const HomePage: React.FC = () => {
 
                     {/* Patterns Section */}
                     <section id="secao-padroes" className="flex-1">
-                        <div className="mb-6 flex justify-center lg:justify-start items-center">
+                        <div className="mb-6 flex justify-center lg:justify-start items-center pt-4">
                             <div className="h-1 w-12 bg-yellow-500 rounded-full mr-3"></div>
                             <h2 className="text-2xl font-semibold text-gray-800">
                                 Padrões de Projeto & Arquitetura
