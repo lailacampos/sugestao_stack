@@ -26,3 +26,4 @@ export { default as kibanaLogo } from './kibana.svg';
 export { default as sentryLogo } from './sentry.svg';
 export { default as newrelicLogo } from './newrelic.svg';
 export { default as phpunitLogo } from './phpunit2.svg';
+export { default as pestLogo } from './pest.svg';
