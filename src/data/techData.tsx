@@ -465,7 +465,7 @@ export const frontendTech: FrontendTechItem[] = [
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <span>Datadog RUM</span>
+                        <span>Datadog RUM</span>
                     </a>
                 </div>
             </div>
@@ -539,7 +539,7 @@ export const frontendTech: FrontendTechItem[] = [
                     <GoPlus className="inline-block md:visible invisible" />
                 </div>
 
-                {/* lint‑staged */}
+                {/* lint-staged */}
                 <div className="flex items-center whitespace-nowrap mr-0">
                     <a
                         href="https://github.com/okonet/lint-staged"
@@ -547,7 +547,7 @@ export const frontendTech: FrontendTechItem[] = [
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <span className="ml-1">lint‑staged</span>
+                        <span className="ml-1">lint-staged</span>
                     </a>
                 </div>
             </div>
@@ -632,18 +632,538 @@ export const frontendTech: FrontendTechItem[] = [
 ];
 
 export const backendTech: BackendTechItem[] = [
+    // Core / API
     {
-        layer: 'Core / API',
-        tech: (
-            <div className="flex items-center space-x-1 hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200">
-                <a href="https://laravel.com/" className='flex items-center' target="_blank" rel="noopener noreferrer">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg" alt="Laravel Logo" width="24" height="24" />
-                    <span>Laravel 10+</span>
-                </a>
+        layer: (
+            <div className="flex items-center whitespace-nowrap mr-0">
+                Core / API
             </div>
         ),
-        justification:
-            'Framework MVC maduro, com suporte a jobs, events, queues e ecossistema consolidado.',
+        tech: (
+            <div className="flex flex-col space-y-2 md:flex-row md:space-x-3 md:justify-center md:items-center md:w-full w-min">
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://laravel.com/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src={logos.laravelLogo}
+                            alt="Laravel Logo"
+                            width={24}
+                            height={24}
+                            className="inline-block"
+                        />
+                        <span className="ml-1">Laravel 10+</span>
+                    </a>
+                </div>
+            </div>
+        ),
+        justification: (
+            <span className="text-gray-700">
+                Framework MVC maduro, com suporte a jobs, events, queues e ecossistema consolidado.
+            </span>
+        ),
+    },
+
+    // Autenticação
+    {
+        layer: (
+            <div className="flex items-center whitespace-nowrap mr-0">
+                Autenticação
+            </div>
+        ),
+        tech: (
+            <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://laravel.com/docs/sanctum"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span className="ml-1">Sanctum (Token API)</span>
+                    </a>
+                    <GoPlus className="inline-block md:visible invisible" />
+                </div>
+            </div>
+        ),
+        justification: (
+            <span className="text-gray-700">
+                SPA/SSR-friendly, tokens revogáveis e fácil integração entre frontend, SSR e micro-serviços.
+            </span>
+        ),
+    },
+
+    // Autorização
+    {
+        layer: (
+            <div className="flex items-center whitespace-nowrap mr-0">
+                Autorização
+            </div>
+        ),
+        tech: (
+            <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://spatie.be/docs/laravel-permission"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span className="ml-1">Spatie laravel-permission</span>
+                    </a>
+                </div>
+            </div>
+        ),
+        justification: (
+            <span className="text-gray-700">
+                Garante gestão de papéis e permissões via Policies, com integração declarativa
+                ao Laravel e suporte a contextos múltiplos de autorização.
+            </span>
+        ),
+    },
+
+    // DB & Cache
+    {
+        layer: (
+            <div className="flex items-center whitespace-nowrap mr-0">
+                DB & Cache
+            </div>
+        ),
+        tech: (
+            <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
+
+                {/* MySQL */}
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://www.mysql.com/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img src={logos.mysqlLogo} alt="MySQL Logo" width={24} height={24} />
+                        <span className="ml-1">MySQL</span>
+                    </a>
+                    <GoPlus className="inline-block md:visible invisible" />
+                </div>
+
+                {/* Redis */}
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://redis.io/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img src={logos.redisLogo} alt="Redis Logo" width={24} height={24} />
+                        <span className="ml-1">Redis/Memcached</span>
+                    </a>
+                </div>
+            </div>
+        ),
+        justification: (
+            <span className="text-gray-700">
+                MySQL para consistência e transações seguras; Redis/Memcached como
+                buffer/cache de leitura, acelerando SSR e diminuindo carga no banco.
+            </span>
+        ),
+    },
+
+    // Queues/Workers
+    {
+        layer: (
+            <div className="flex items-center whitespace-nowrap mr-0">
+                Queues/Workers
+            </div>
+        ),
+        tech: (
+            <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
+
+                {/* Redis */}
+                <div className='flex items-center whitespace-nowrap mr-0'>
+                    <a
+                        href="https://redis.io/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img src={logos.redisLogo} alt="Redis Logo" width={24} height={24} />
+                        <span className="ml-1">Redis/RabbitMQ</span>
+                    </a>
+                    <GoPlus className="inline-block md:visible invisible" />
+                </div>
+
+                {/* Horizon */}
+                <div className='flex items-center whitespace-nowrap mr-0'>
+                    <a
+                        href="https://laravel.com/docs/horizon"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span className="ml-1">Horizon</span>
+                    </a>
+                </div>
+            </div>
+        ),
+        justification: (
+            <span className="text-gray-700">
+                Processamento paralelo de jobs pesados (OCR, notificações, relatórios),
+                com monitoramento via Horizon.
+            </span>
+        ),
+    },
+
+    // Real-Time
+    {
+        layer: (
+            <div className="flex items-center whitespace-nowrap mr-0">
+                Real-Time
+            </div>
+        ),
+        tech: (
+            <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
+
+                {/* Laravel Echo */}
+                <div className="flex items-center whitespace-nowrap m-0">
+                    <a
+                        href="https://laravel.com/docs/echo"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span className="ml-1">Laravel Echo</span>
+                    </a>
+                    <GoPlus className="inline-block md:visible invisible" />
+                </div>
+
+                {/* Pusher / socket.io */}
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://pusher.com/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src={logos.pusherLogo}
+                            alt="Pusher Logo"
+                            width={24}
+                            height={24}
+                            className="inline-block"
+                        />
+                        <span className="ml-1">Pusher/socket.io</span>
+                    </a>
+                </div>
+            </div>
+        ),
+        justification: (
+            <span className="text-gray-700">
+                Atualizações em tempo real para dashboards, notificações e métricas ao vivo,
+                usando Echo para abstração de canais e Pusher/socket.io como driver.
+            </span>
+        ),
+    },
+
+    // OCR & IA
+    {
+        layer: (
+            <div className="flex items-center whitespace-nowrap mr-0">
+                OCR & IA
+            </div>
+        ),
+        tech: (
+            <div className="flex flex-col space-y-2 md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
+
+                {/* Micro-serviço Python */}
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://fastapi.tiangolo.com/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src={logos.fastapiLogo}
+                            alt="FastAPI Logo"
+                            width={24}
+                            height={24}
+                            className="inline-block"
+                        />
+                        <span className="ml-1">FastAPI + PyTorch/TensorFlow</span>
+                    </a>
+                    <GoPlus className="inline-block md:visible invisible" />
+                </div>
+
+                {/* AWS Rekognition */}
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://aws.amazon.com/rekognition/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src={logos.awsLogo}
+                            alt="AWS Rekognition Logo"
+                            width={24}
+                            height={24}
+                            className="inline-block"
+                        />
+                        <span className="ml-1">AWS Rekognition</span>
+                    </a>
+                </div>
+            </div>
+        ),
+        justification: (
+            <span className="text-gray-700">
+                Reconhecimento de texto e imagens via serviço Python dedicado (FastAPI + ML)
+                ou alternativa gerenciada com AWS Rekognition, mantendo o backend desacoplado.
+            </span>
+        ),
+    },
+
+    // Busca & BI
+    {
+        layer: (
+            <div className="flex items-center whitespace-nowrap mr-0">
+                Busca & BI
+            </div>
+        ),
+        tech: (
+            <div className="flex flex-col space-y-2 md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
+                {/* ElasticSearch */}
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://www.elastic.co/elasticsearch/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="ElasticSearch"
+                    >
+                        <img
+                            src={logos.elasticLogo}
+                            alt="ElasticSearch Logo"
+                            width={80}
+                            height={80}
+                            className="inline-block"
+                        />
+                        {/* <span className="ml-1">ElasticSearch</span> */}
+                    </a>
+                </div>
+                {/* Kibana/Grafana */}
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://grafana.com/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src={logos.kibanaLogo}
+                            alt="Kibana Logo"
+                            width={24}
+                            height={24}
+                            className="inline-block"
+                        />
+                        <span className="ml-1">Kibana</span>
+                    </a>
+                </div>
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://grafana.com/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src={logos.grafanaLogo}
+                            alt="Grafana Logo"
+                            width={24}
+                            height={24}
+                            className="inline-block"
+                        />
+                        <span className="ml-1">Grafana</span>
+                    </a>
+                </div>
+            </div>
+        ),
+        justification: (
+            <span className="text-gray-700">
+                Indexação e buscas avançadas com ElasticSearch ou MeiliSearch, e dashboards BI
+                em Kibana/Grafana via API para análise de métricas e relatórios.
+            </span>
+        ),
+    },
+
+    // Documentação
+    {
+        layer: (
+            <div className="flex items-center whitespace-nowrap mr-0">
+                Documentação
+            </div>
+        ),
+        tech: (
+            <div className="flex flex-col space-y-2 md:flex-row md:space-x-3 md:justify-center md:items-center md:w-full w-min">
+
+                {/* Scribe */}
+                <div className="flex items-center whitespace-nowrap m-0">
+                    <a
+                        href="https://scribe.rip/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span className="ml-1">Scribe</span>
+                    </a>
+                    <GoPlus className="inline-block md:visible invisible" />
+                </div>
+
+                {/* Laravel OpenAPI */}
+                <div className="flex items-center whitespace-nowrap mr-0">
+                    <a
+                        href="https://github.com/darkaonline/l5-swagger"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span className="ml-1">Laravel OpenAPI</span>
+                    </a>
+                </div>
+
+            </div>
+        ),
+        justification: (
+            <span className="text-gray-700">
+                Geração de documentação automática via Scribe e suporte OpenAPI/Swagger
+                com L5-Swagger, facilitando testes e geração de SDKs.
+            </span>
+        ),
+    },
+
+    // Logging & Perf
+    {
+        layer: (
+            <div className="flex items-center whitespace-nowrap m-0">
+                Logging & Perf
+            </div>
+        ),
+        tech: (
+            <div className="flex flex-col space-y-2 md:space-x-3 md:justify-center md:items-center md:w-full w-min">
+                {/* Laravel Telescope */}
+                <div className="flex items-center whitespace-nowrap m-0">
+                    <a
+                        href="https://laravel.com/docs/telescope"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span className="ml-1">Telescope</span>
+                    </a>
+                </div>
+                {/* Sentry */}
+                <div className="flex items-center whitespace-nowrap m-0">
+                    <a
+                        href="https://sentry.io/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src={logos.sentryLogo}
+                            alt="Sentry Logo"
+                            width={24}
+                            height={24}
+                            className="inline-block"
+                        />
+                        <span className="ml-1">Sentry</span>
+                    </a>
+                </div>
+                {/* NewRelic */}
+                <div className="flex items-center whitespace-nowrap m-0">
+                    <a
+                        href="https://newrelic.com/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src={logos.newrelicLogo}
+                            alt="NewRelic Logo"
+                            width={90}
+                            height={90}
+                            className="inline-block"
+                        />
+                        {/* <span className="ml-1">NewRelic</span> */}
+                    </a>
+                </div>
+            </div>
+        ),
+        justification: (
+            <span className="text-gray-700">
+                Telescope para inspeção interna de requests e jobs; Sentry/NewRelic para
+                monitoramento de performance e erros em produção.
+            </span>
+        ),
+    },
+
+    // Teste
+    {
+        layer: (
+            <div className="flex items-center whitespace-nowrap m-0">
+                Teste
+            </div>
+        ),
+        tech: (
+            <div className="flex flex-col space-y-2 md:flex-row md:space-x-3 md:justify-center md:items-center md:w-full w-min">
+                {/* PHPUnit */}
+                <div className="flex md:items-center whitespace-nowrap m-0">
+                    <a
+                        href="https://phpunit.de/"
+                        className="flex md:items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200 md:w-auto w-18"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src={logos.phpunitLogo}
+                            alt="PHPUnit Logo"
+                            width={80}
+                            height={80}
+                            className="inline-block"
+                        />
+                        {/* <span className="ml-1">PHPUnit</span> */}
+                    </a>
+                    <GoPlus className="inline-block md:visible invisible" />
+                </div>
+                {/* Pest */}
+                <div className="flex items-center whitespace-nowrap m-0">
+                    <a
+                        href="https://pestphp.com/"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200 md:w-auto w-18"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        {/* <figure className="shadow-white flex items-center justify-center w-10 h-10 p-1 bg-black rounded-lg shadow-2xl"> */}
+                            <img
+                                src={logos.pestLogo}
+                                alt="Pest Logo"
+                                width={52}
+                                height={52}
+                                className="inline-block"
+                            />
+                        {/* </figure> */}
+                        {/* <span className="ml-1">Pest</span> */}
+                    </a>
+                </div>
+            </div>
+        ),
+        justification: (
+            <span className="text-gray-700">
+                PHPUnit como padrão do ecossistema PHP; Pest para sintaxe fluida e BDD-style.
+            </span>
+        ),
     },
 ];
 
