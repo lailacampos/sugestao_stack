@@ -1146,13 +1146,13 @@ export const backendTech: BackendTechItem[] = [
                         rel="noopener noreferrer"
                     >
                         {/* <figure className="shadow-white flex items-center justify-center w-10 h-10 p-1 bg-black rounded-lg shadow-2xl"> */}
-                            <img
-                                src={logos.pestLogo}
-                                alt="Pest Logo"
-                                width={52}
-                                height={52}
-                                className="inline-block"
-                            />
+                        <img
+                            src={logos.pestLogo}
+                            alt="Pest Logo"
+                            width={52}
+                            height={52}
+                            className="inline-block"
+                        />
                         {/* </figure> */}
                         {/* <span className="ml-1">Pest</span> */}
                     </a>
@@ -1162,6 +1162,36 @@ export const backendTech: BackendTechItem[] = [
         justification: (
             <span className="text-gray-700">
                 PHPUnit como padrão do ecossistema PHP; Pest para sintaxe fluida e BDD-style.
+            </span>
+        ),
+    },
+
+    // CI/CD
+    {
+        layer: (
+            <div className="flex items-center whitespace-nowrap m-0">
+                CI/CD
+            </div>
+        ),
+        tech: (
+            <div className="flex flex-col space-y-2 md:flex-row md:space-x-3 md:justify-center md:items-center md:w-full w-min">
+                {/* GitHub Actions / GitLab CI */}
+                <div className="flex items-center whitespace-nowrap m-0">
+                    <a
+                        href="https://github.com/features/actions"
+                        className="flex items-center hover:bg-green-100 rounded-lg px-2 py-1 transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span className="ml-1">GitHub Actions / GitLab CI</span>
+                    </a>
+                </div>
+            </div>
+        ),
+        justification: (
+            <span className="text-gray-700">
+                Pipelines automatizadas no GitHub/GitLab e deploy zero-downtime via Envoyer,
+                Forge ou contêineres orquestrados em Kubernetes.
             </span>
         ),
     },
