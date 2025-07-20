@@ -1,161 +1,53 @@
-<h1>Vite + React + TypeScript + Tailwind CSS Template</h1>
+  <h1>Tech Stack Guide</h1>
+  <p>
+    Este projeto é um site de referência para escolhas de tecnologias e padrões de arquitetura de um sistema. Ele apresenta tabelas de comparação e seções detalhadas para o frontend, backend, SSR e padrões de projeto.
+  </p>
 
-<p>
-  This template provides a fast starting point for projects using <strong>Vite</strong>, <strong>React</strong> (with TypeScript), and <strong>Tailwind CSS</strong>, all pre-configured for rapid development using <strong>Yarn Berry</strong> (Yarn v4+).
-</p>
+  <h2>Sumário</h2>
+  <ul>
+    <li><a href="#features">Funcionalidades</a></li>
+    <li><a href="#stack">Stack Tecnológica</a></li>
+    <li><a href="#getting-started">Como Executar</a></li>
+    <li><a href="#project-structure">Estrutura do Projeto</a></li>
+  </ul>
 
-<hr>
+  <h2 id="features">Funcionalidades</h2>
+  <ul>
+    <li>Visualização de tabelas com sugestões de tecnologias para Frontend, Backend e SSR</li>
+    <li>Seção de detalhes explicando motivações e justificativas para cada tecnologia</li>
+    <li>Mapeamento de padrões de projeto e arquitetura com comparações entre MVC e outros padrões</li>
+    <li>Navegação por âncoras para salto rápido entre seções</li>
+    <li>Layout responsivo com Tailwind CSS</li>
+  </ul>
 
-<h2>🚀 Getting Started Locally</h2>
-<ol>
-  <li>
-    <strong>Install dependencies:</strong>
-    <pre><code>yarn install</code></pre>
-  </li>
-  <li>
-    <strong>Start the development server:</strong>
-    <pre><code>yarn dev</code></pre>
-  </li>
-  <li>
-    <strong>Open your browser:</strong>
-    <pre><code>http://localhost:5173</code></pre>
-    <p>(or as indicated in the terminal)</p>
-  </li>
-</ol>
+  <h2 id="stack">Stack Tecnológica</h2>
+  <ul>
+    <li><strong>Frontend:</strong> React, Next.js, TypeScript, Tailwind CSS</li>
+    <li><strong>SSR / SSG:</strong> Next.js (getServerSideProps, getStaticProps)</li>
+    <li><strong>Cache em memória:</strong> Redis ou Memcached</li>
+    <li><strong>Backend:</strong> Laravel, MySQL, Workers (Jobs, Filas)</li>
+    <li><strong>Ferramentas:</strong> React Icons, ESLint, Prettier</li>
+  </ul>
 
-<hr>
+  <h2 id="getting-started">Como Executar</h2>
+  <h3>Pré-requisitos</h3>
+  <ul>
+    <li>Yarn</li>
+  </ul>
 
-<h2>🆕 Creating a New Project from This Template</h2>
-<ol>
-  <li>
-    <strong>Create a new Vite project:</strong>
-    <pre><code>yarn create vite my-app --template react-ts</code></pre>
-    <p>Replace <code>my-app</code> with your desired project name.</p>
-  </li>
-  <li>
-    <strong>Navigate to the project folder:</strong>
-    <pre><code>cd my-app</code></pre>
-  </li>
-  <li>
-    <strong>Add Tailwind CSS and its Vite plugin:</strong>
-    <pre><code>yarn add tailwindcss @tailwindcss/vite</code></pre>
-  </li>
-  <li>
-    <strong>Initialize Tailwind config (optional, if you want a config file):</strong>
-    <pre><code>yarn dlx tailwindcss init -p</code></pre>
-  </li>
-  <li>
-    <strong>Update <code>vite.config.ts</code> to include Tailwind:</strong>
-    <pre><code>
-import &#123; defineConfig &#125; from 'vite'
-import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'<br>
-// https://vite.dev/config/
-export default defineConfig({
-  plugins: [react(), tailwindcss()],
-})
+  <h3>Instalação</h3>
+  <pre><code>git clone https://github.com/lailacampos/sugestao_stack.git
+cd sugestao_stack
+yarn install
 </code></pre>
 
-  </li>
-  <li>
-    <strong>Install dependencies:</strong>
-    <pre><code>yarn install</code></pre>
-  </li>
-  <li>
-    <strong>Start developing!</strong>
-    <pre><code>yarn dev</code></pre>
-  </li>
-</ol>
+  <h3>Rodando em Desenvolvimento</h3>
+  <pre><code>yarn dev
+</code></pre>
+  <p>
+    Abra <code>http://localhost:3000</code> (ou porta equivalente) no navegador para ver o site.
+  </p>
 
-<hr>
-
-<h2>📚 Useful Resources</h2>
-<ul>
-  <li><a href="https://vitejs.dev/">Vite Documentation</a></li>
-  <li><a href="https://react.dev/">React Documentation</a></li>
-  <li><a href="https://www.typescriptlang.org/">TypeScript Docs</a></li>
-  <li><a href="https://tailwindcss.com/docs/">Tailwind CSS Docs</a></li>
-  <li><a href="https://yarnpkg.com/">Yarn (Berry) Docs</a></li>
-</ul>
-<br>
-
----
-<br>
-<h1>Template Vite + React + TypeScript + Tailwind CSS</h1>
-
-<p>
-  Este template oferece um ponto de partida rápido para projetos utilizando <strong>Vite</strong>, <strong>React</strong> (com TypeScript) e <strong>Tailwind CSS</strong>, todos pré-configurados para desenvolvimento ágil usando <strong>Yarn Berry</strong> (Yarn v4+).
-</p>
-
-<hr>
-
-<h2>🚀 Rodando o Projeto Localmente</h2>
-<ol>
-  <li>
-    <strong>Instale as dependências:</strong>
-    <pre><code>yarn install</code></pre>
-  </li>
-  <li>
-    <strong>Inicie o servidor de desenvolvimento:</strong>
-    <pre><code>yarn dev</code></pre>
-  </li>
-  <li>
-    <strong>Abra o navegador:</strong>
-    <pre><code>http://localhost:5173</code></pre>
-    <p>(ou conforme indicado no terminal)</p>
-  </li>
-</ol>
-
-<hr>
-
-<h2>🆕 Criando um Novo Projeto com Esta Configuração</h2>
-<ol>
-  <li>
-    <strong>Crie um novo projeto Vite:</strong>
-    <pre><code>yarn create vite meu-app --template react-ts</code></pre>
-    <p>Substitua <code>meu-app</code> pelo nome desejado para o seu projeto.</p>
-  </li>
-  <li>
-    <strong>Entre na pasta do projeto:</strong>
-    <pre><code>cd meu-app</code></pre>
-  </li>
-  <li>
-    <strong>Adicione o Tailwind CSS e o plugin do Vite:</strong>
-    <pre><code>yarn add tailwindcss @tailwindcss/vite</code></pre>
-  </li>
-  <li>
-    <strong>Inicialize o Tailwind config (opcional, se quiser o arquivo de configuração):</strong>
-    <pre><code>yarn dlx tailwindcss init -p</code></pre>
-  </li>
-  <li>
-    <strong>Atualize o <code>vite.config.ts</code> para incluir o Tailwind:</strong>
-    <pre><code>
-import &#123; defineConfig &#125; from 'vite'
-import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'<br>
-// https://vite.dev/config/
-export default defineConfig(&#123;
-  plugins: [react(), tailwindcss()],
-&#125;)
-    </code></pre>
-  </li>
-  <li>
-    <strong>Instale as dependências:</strong>
-    <pre><code>yarn install</code></pre>
-  </li>
-  <li>
-    <strong>Comece a desenvolver!</strong>
-    <pre><code>yarn dev</code></pre>
-  </li>
-</ol>
-
-<hr>
-
-<h2>📚 Recursos Úteis</h2>
-<ul>
-  <li><a href="https://vitejs.dev/">Documentação do Vite</a></li>
-  <li><a href="https://react.dev/">Documentação do React</a></li>
-  <li><a href="https://www.typescriptlang.org/">Documentação do TypeScript</a></li>
-  <li><a href="https://tailwindcss.com/docs/">Documentação do Tailwind CSS</a></li>
-  <li><a href="https://yarnpkg.com/">Documentação do Yarn (Berry)</a></li>
-</ul>
+  <h3>Build para Produção</h3>
+  <pre><code>yarn build && yarn start
+</code></pre>
