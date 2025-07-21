@@ -3,17 +3,20 @@ import { GoPlus } from "react-icons/go";
 import * as logos from '../assets/logos/logos';
 
 export interface FrontendTechItem {
+    id: string;
     category: React.ReactNode;
     tech: React.ReactNode;
 }
 
 export interface BackendTechItem {
+    id: string;
     layer: React.ReactNode;
     tech: React.ReactNode;
     justification: React.ReactNode;
 }
 
 export interface SSRTechItem {
+    id: string;
     layer: React.ReactNode;
     tech: React.ReactNode;
     justification: React.ReactNode;
@@ -22,6 +25,7 @@ export interface SSRTechItem {
 export const frontendTech: FrontendTechItem[] = [
     // Base
     {
+        id: "base",
         category: (
             <div className='flex space-x-2 ml-0 md:ml-5'>
                 Base
@@ -69,6 +73,7 @@ export const frontendTech: FrontendTechItem[] = [
 
     // Estado & Dados
     {
+        id: "state-data",
         category: (
             <div className='flex space-x-2 ml-0 md:ml-5'>
                 Estado & Dados
@@ -106,6 +111,7 @@ export const frontendTech: FrontendTechItem[] = [
 
     // UI & CSS
     {
+        id: "ui-css",
         category: (
             <div className='flex space-x-2 ml-0 md:ml-5'>
                 UI & CSS
@@ -176,6 +182,7 @@ export const frontendTech: FrontendTechItem[] = [
 
     // Animações & Ícones
     {
+        id: "animations-icons",
         category: (
             <div className='flex space-x-2 ml-0 md:ml-5'>
                 Animações & Ícones
@@ -215,6 +222,7 @@ export const frontendTech: FrontendTechItem[] = [
 
     // Listas & Tabelas Grandes
     {
+        id: "lists-tables",
         category: <div className="flex space-x-2 ml-0 md:ml-5">Listas & Tabelas Grandes</div>,
         tech: (
             <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
@@ -249,6 +257,7 @@ export const frontendTech: FrontendTechItem[] = [
 
     // Cache Offline & IndexedDB
     {
+        id: "cache-offline-indexeddb",
         category: <div className="flex space-x-2 ml-0 md:ml-5">Cache Offline & IndexedDB</div>,
         tech: (
             <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
@@ -271,6 +280,7 @@ export const frontendTech: FrontendTechItem[] = [
 
     // Formulários & Validação
     {
+        id: "forms-validation",
         category: (
             <div className='flex space-x-2 ml-0 md:ml-5'>
                 Forms & Validação
@@ -309,6 +319,7 @@ export const frontendTech: FrontendTechItem[] = [
 
     // Select/Autocomplete Avançado
     {
+        id: "select-autocomplete",
         category: <div className="flex space-x-2 ml-0 md:ml-5">Select/Autocomplete Avançado</div>,
         tech: (
             <div className="flex flex-col space-y-2 md:flex-row md:justify-center md:items-center md:space-x-3 md:space-y-0 md:w-full w-min">
@@ -343,6 +354,7 @@ export const frontendTech: FrontendTechItem[] = [
 
     // SSR/SEO
     {
+        id: "ssr-seo",
         category: (
             <div className="flex space-x-2 ml-0 md:ml-5">SSR/SEO</div>
         ),
@@ -405,6 +417,7 @@ export const frontendTech: FrontendTechItem[] = [
 
     // HTTP & Auth
     {
+        id: "http-auth",
         category: (
             <div className="flex space-x-2 ml-0 md:ml-5">HTTP & Auth</div>
         ),
@@ -437,6 +450,7 @@ export const frontendTech: FrontendTechItem[] = [
 
     // Observabilidade & Monitoramento
     {
+        id: "observability-monitoring",
         category: (
             <div className="flex space-x-2 ml-0 md:ml-5">
                 Observabilidade & Monitoramento
@@ -502,6 +516,7 @@ export const frontendTech: FrontendTechItem[] = [
 
     // Lint & Formatting
     {
+        id: "lint-formatting-frontend",
         category: (
             <div className="flex space-x-2 ml-0 md:ml-5">Lint & Formatting</div>
         ),
@@ -551,6 +566,7 @@ export const frontendTech: FrontendTechItem[] = [
 
     // Git Hooks
     {
+        id: "git-hooks",
         category: (
             <div className="flex space-x-2 ml-0 md:ml-5">Git Hooks</div>
         ),
@@ -587,6 +603,7 @@ export const frontendTech: FrontendTechItem[] = [
 
     // Testes
     {
+        id: "testing-frontend",
         category: (
             <div className="flex space-x-2 ml-0 md:ml-5">Testes</div>
         ),
@@ -625,6 +642,7 @@ export const frontendTech: FrontendTechItem[] = [
 
     // Component Docs
     {
+        id: "component-docs",
         category: (
             <div className="flex space-x-2 ml-0 md:ml-5">Component Docs</div>
         ),
@@ -649,6 +667,7 @@ export const frontendTech: FrontendTechItem[] = [
 
     // Extras
     {
+        id: "extras-frontend",
         category: (
             <div className='flex space-x-2 ml-0 md:ml-5'>
                 Extras
@@ -667,6 +686,7 @@ export const frontendTech: FrontendTechItem[] = [
 export const backendTech: BackendTechItem[] = [
     // Core / API
     {
+        id: "core-api",
         layer: (
             <div className="flex items-center whitespace-nowrap mr-0">
                 Core / API
@@ -704,6 +724,7 @@ export const backendTech: BackendTechItem[] = [
 
     // Autenticação
     {
+        id: "auth",
         layer: (
             <div className="flex items-center whitespace-nowrap mr-0">
                 Autenticação
@@ -735,6 +756,7 @@ export const backendTech: BackendTechItem[] = [
 
     // Autorização
     {
+        id: "autorization",
         layer: (
             <div className="flex items-center whitespace-nowrap mr-0">
                 Autorização
@@ -766,6 +788,7 @@ export const backendTech: BackendTechItem[] = [
 
     // DB & Cache
     {
+        id: "db-cache",
         layer: (
             <div className="flex items-center whitespace-nowrap mr-0">
                 DB & Cache
@@ -812,6 +835,7 @@ export const backendTech: BackendTechItem[] = [
 
     // Queues/Workers
     {
+        id: "queues-workers",
         layer: (
             <div className="flex items-center whitespace-nowrap mr-0">
                 Queues/Workers
@@ -857,6 +881,7 @@ export const backendTech: BackendTechItem[] = [
 
     // Real-Time
     {
+        id: "real-time",
         layer: (
             <div className="flex items-center whitespace-nowrap mr-0">
                 Real-Time
@@ -908,6 +933,7 @@ export const backendTech: BackendTechItem[] = [
 
     // OCR & IA
     {
+        id: "ocr-ia",
         layer: (
             <div className="flex items-center whitespace-nowrap mr-0">
                 OCR & IA
@@ -984,6 +1010,7 @@ export const backendTech: BackendTechItem[] = [
 
     // Busca & BI
     {
+        id: "search-bi",
         layer: (
             <div className="flex items-center whitespace-nowrap mr-0">
                 Busca & BI
@@ -1061,6 +1088,7 @@ export const backendTech: BackendTechItem[] = [
 
     // Documentação
     {
+        id: "documentation",
         layer: (
             <div className="flex items-center whitespace-nowrap mr-0">
                 Documentação
@@ -1106,6 +1134,7 @@ export const backendTech: BackendTechItem[] = [
 
     // Logging & Perf
     {
+        id: "logging-performance",
         layer: (
             <div className="flex items-center whitespace-nowrap m-0">
                 Logging & Perf
@@ -1175,6 +1204,7 @@ export const backendTech: BackendTechItem[] = [
 
     // Teste
     {
+        id: "testing-backend",
         layer: (
             <div className="flex items-center whitespace-nowrap m-0">
                 Teste
@@ -1232,6 +1262,7 @@ export const backendTech: BackendTechItem[] = [
 
     // CI/CD
     {
+        id: "ci-cd-backend",
         layer: (
             <div className="flex items-center whitespace-nowrap m-0">
                 CI/CD
@@ -1265,6 +1296,7 @@ export const backendTech: BackendTechItem[] = [
 export const ssrTech: SSRTechItem[] = [
     // Framework SSR
     {
+        id: "framework-ssr",
         layer: (
             <div className="flex items-center whitespace-nowrap mr-0">
                 Framework SSR
@@ -1304,6 +1336,7 @@ export const ssrTech: SSRTechItem[] = [
 
     // Linguagem e Execução
     {
+        id: "language-runtime",
         layer: (
             <div className="flex items-center whitespace-nowrap mr-0">
                 Linguagem e Execução
@@ -1342,6 +1375,7 @@ export const ssrTech: SSRTechItem[] = [
 
     // Fetching/HTTP Client
     {
+        id: "fetching-http-client",
         layer: (
             <div className="flex items-center whitespace-nowrap mr-0">
                 Fetching/HTTP Client
@@ -1392,6 +1426,7 @@ export const ssrTech: SSRTechItem[] = [
 
     // Buffer/Cache Client
     {
+        id: "buffer-cache-client",
         layer: (
             <div className="flex items-center whitespace-nowrap mr-0">
                 Buffer/Cache Client
@@ -1443,6 +1478,7 @@ export const ssrTech: SSRTechItem[] = [
 
     // Auth/Session
     {
+        id: "auth-session",
         layer: (
             <div className="flex items-center whitespace-nowrap mr-0">
                 Auth/Session
@@ -1481,6 +1517,7 @@ export const ssrTech: SSRTechItem[] = [
 
     // SEO (Search Engine Optimization)
     {
+        id: "seo",
         layer: (
             <div className="flex items-center mr-0">
                 SEO (Search Engine Optimization)
@@ -1512,6 +1549,7 @@ export const ssrTech: SSRTechItem[] = [
 
     // Otimização de Imagens
     {
+        id: "image-optimization",
         layer: (
             <div className="flex items-center mr-0">
                 Otimização de Imagens
@@ -1562,6 +1600,7 @@ export const ssrTech: SSRTechItem[] = [
 
     // PWA (Progressive Web App)
     {
+        id: "pwa",
         layer: (
             <div className="flex items-center mr-0">
                 PWA (Aplicativo Web Progressivo)
@@ -1592,6 +1631,7 @@ export const ssrTech: SSRTechItem[] = [
 
     // Observabilidade/Erros
     {
+        id: "observability-errors",
         layer: (
             <div className="flex items-center whitespace-nowrap mr-0">
                 Observabilidade/Erros
@@ -1650,6 +1690,7 @@ export const ssrTech: SSRTechItem[] = [
 
     // Monitoramento & Logs
     {
+        id: "monitoring-logs",
         layer: (
             <div className="flex items-center whitespace-nowrap mr-0">
                 Monitoramento & Logs
@@ -1701,6 +1742,7 @@ export const ssrTech: SSRTechItem[] = [
 
     // Lint & Formatting
     {
+        id: "lint-formatting-ssr",
         layer: (
             <div className="flex items-center whitespace-nowrap mr-0">
                 Lint & Formatting
@@ -1757,6 +1799,7 @@ export const ssrTech: SSRTechItem[] = [
 
     // Testes
     {
+        id: "testing-ssr",
         layer: (
             <div className="flex items-center whitespace-nowrap mr-0">
                 Testes
@@ -1814,6 +1857,7 @@ export const ssrTech: SSRTechItem[] = [
 
     // Deploy & Infra
     {
+        id: "deploy-infra",
         layer: (
             <div className="flex items-center whitespace-nowrap mr-0">
                 Deploy & Infra
@@ -1909,6 +1953,7 @@ export const ssrTech: SSRTechItem[] = [
 
     // CI/CD
     {
+        id: "ci-cd-ssr",
         layer: (
             <div className="flex items-center whitespace-nowrap mr-0">
                 CI/CD
