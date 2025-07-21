@@ -6,13 +6,14 @@ export interface ColumnConfig<T> {
 }
 
 export interface TechTableProps<T> {
+    id: string;
     columns: ColumnConfig<T>[];
     items: T[];
 }
 
-export const TechTable = <T,>({ columns, items }: TechTableProps<T>) => {
+export const TechTable = <T,>({ id, columns, items }: TechTableProps<T>) => {
     return (
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto" id={id}>
             <table className="min-w-full divide-y divide-gray-200">
                 <thead className="bg-white">
                     <tr>
