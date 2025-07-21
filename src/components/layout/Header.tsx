@@ -36,7 +36,7 @@ const Header: React.FC = () => {
     };
 
     return (
-        <header className="navbar fixed top-0 left-0 z-50 shadow-lg bg-gray-50 w-full backdrop-blur-md justify-start">
+        <header className="navbar fixed top-0 left-0 z-50 shadow-lg bg-gray-50 text-gray-800 w-full backdrop-blur-md justify-start">
             <div className="container mx-auto px-4 flex justify-between items-center h-16">
 
                 {/* Desktop Menu */}
@@ -49,14 +49,14 @@ const Header: React.FC = () => {
                                     {item.children && <GoChevronDown className="text-lg" />}
                                 </a>
                                 {item.children && (
-                                    <ul className="absolute top-full left-0 mt-0 p-2 shadow-lg bg-gray-50 rounded transition-opacity duration-200 focus-within:visible opacity-100 group-hover:opacity-100 focus-within:opacity-100 group-hover:visible invisible z-100">
+                                    <ul className="absolute top-full left-0 mt-0 p-2 shadow-lg bg-gray-50 text-gray-800 rounded transition-opacity duration-200 focus-within:visible opacity-100 group-hover:opacity-100 focus-within:opacity-100 group-hover:visible invisible z-100">
                                         {item.children.map((sub: MenuItem) => (
                                             <li key={sub.id} className="relative group">
                                                 <a href={sub.href} className="block px-4 py-2 whitespace-nowrap hover:bg-gray-100">
                                                     {sub.title}
                                                 </a>
                                                 {sub.children && (
-                                                    <ul className="absolute bg-gray-50 top-0 left-full ml-1 p-2 shadow-lg rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-200 focus-within:opacity-100 focus-within:visible">
+                                                    <ul className="absolute bg-gray-50 text-gray-800 top-0 left-full ml-1 p-2 shadow-lg rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-200 focus-within:opacity-100 focus-within:visible">
                                                         {sub.children.map((subSub: MenuItem) => (
                                                             <li key={subSub.id}>
                                                                 <a
