@@ -82,7 +82,7 @@ const Header: React.FC = () => {
                 <button
                     className="lg:hidden p-2"
                     onClick={() => setIsMenuOpen((o) => !o)}
-                    aria-title="Toggle menu"
+                    // aria-title="Toggle menu"
                 >
                     {isMenuOpen ? <GoX size={24} /> : <MdOutlineMenu size={24} />}
                 </button>
