@@ -1,18 +1,28 @@
 
 // src/pages/HomePage.tsx
+import Header from "../components/layout/Header";
 import { frontendColumns, backendColumns, ssrColumns, getPatternColumns } from "../config/tableColumns";
 import { TechTable } from "../components/Table/TechTable";
+import { TechDetailsSection } from "../components/TechDetailsSection/TechDetailsSection";
 import { frontendTech, backendTech, ssrTech } from "../data/techTableData";
+import { frontendDetails, backendDetails, ssrDetails } from "../data/techDetails";
 import { patterns } from "../data/patterns";
 import { GoArrowDown } from "react-icons/go";
 import softwareEngineeringIcon from "../assets/software_engineering.svg";
 
 const HomePage: React.FC = () => {
+
+    frontendDetails.map(detail => {
+        console.log(detail);
+    });
+
     return (
-        <div className="min-h-screen bg-gray-50 flex justify-center px-4 py-8">
-            <div className="w-full md:max-w-4xl max-w-3xl">
+        
+        <div id="top" className="min-h-screen bg-gray-50 flex justify-center px-4 py-8 overflow-hidden">
+            <Header />
+            <div className="w-full md:max-w-4xl max-w-3xl pt-18">
                 {/* Header */}
-                <header className="mb-10 text-center lg:text-left">
+                <div className="mb-10 text-center lg:text-left">
                     <div className="flex flex-col lg:flex-row items-center mb-4">
                         <img
                             src={softwareEngineeringIcon}
@@ -28,12 +38,12 @@ const HomePage: React.FC = () => {
                         para o desenvolvimento de sistema intermediário e avançado
                         utilizando React, Next.js, SSR, Laravel e mais.
                     </p>
-                </header>
+                </div>
 
                 {/* Quick Navigation Links */}
-                <nav className="mb-10 flex flex-wrap justify-center lg:justify-start space-x-6">
+                <nav className="flex flex-wrap justify-center lg:justify-start space-x-6 -mb-8">
                     <a
-                        href="#secao-frontend"
+                        href="#frontend-section"
                         className="text-blue-500 hover:underline font-medium"
                     >
                         Frontend
@@ -59,84 +69,93 @@ const HomePage: React.FC = () => {
                 </nav>
 
                 {/* Document Presentation */}
-                <section id="resumo" className="bg-white shadow-md rounded-lg p-6 mb-10">
-                    <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-                        Resumo da Arquitetura Proposta
-                    </h2>
-                    <p className="text-gray-700 mb-4">
-                        O frontend oferece interfaces ricas, o SSR entrega páginas prontas e
-                        otimizadas, o buffer garante respostas rápidas usando dados em
-                        memória, e o backend cuida da lógica, persistência e processamento
-                        assíncrono.
-                    </p>
-                    <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                        Fluxo principal
-                    </h3>
-                    <pre className="bg-gray-100 p-4 rounded mb-4 text-gray-700 overflow-x-auto">
-                        <code className="font-mono">
-                            <span className="text-blue-500 text-wrap">Frontend (React/Next.js)</span>
-                            <br />
-                            <GoArrowDown className="inline-block mx-2 text-gray-500" />
-                            <br />
-                            <span className="text-green-500 text-wrap">Server SSR (Next.js/Node.js)</span>
-                            <br />
-                            <GoArrowDown className="inline-block mx-2 text-gray-500" />
-                            <br />
-                            <span className="text-yellow-500 text-wrap">Buffer (Redis/Memcached)</span>
-                            <br />
-                            <GoArrowDown className="inline-block mx-2 text-gray-500" />
-                            <br />
-                            <span className="text-orange-500 text-wrap">Backend (Laravel, MySQL, Workers, etc)</span>
-                        </code>
-                    </pre>
-                    <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                        Descrição do Fluxo
-                    </h3>
-                    <ul className="list-disc list-inside text-gray-700 space-y-2">
-                        <li>
-                            <strong>Frontend:</strong> Utiliza React com Next.js e TypeScript;
-                            consome páginas e dados já otimizados, prontos para renderização e
-                            navegação rápida.
-                        </li>
-                        <li>
-                            <strong>Server SSR:</strong> Servidor de SSR renderiza as páginas no
-                            servidor com dados reais antes de enviá-las ao navegador;
-                            proporciona carregamento inicial mais rápido e SEO aprimorado;
-                            aplica lógicas de autenticação, pré-busca, cache e PWA.
-                        </li>
-                        <li>
-                            <strong>Buffer:</strong> Utiliza Redis ou Memcached como camada de
-                            cache em memória, armazenando dados semi-estáticos ou altamente
-                            requisitados para respostas rápidas.
-                        </li>
-                        <li>
-                            <strong>Backend:</strong> Responsável por regras de negócio,
-                            persistência definitiva, processamento assíncrono (jobs, IA,
-                            relatórios) e atualização do buffer, desacoplando-se da renderização.
-                        </li>
-                    </ul>
-                </section>
+                <div id="summary" className="pt-18 -mb-16">
+                    <section className="bg-white shadow-md rounded-lg p-6 mb-10">
+                        <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+                            Resumo da Arquitetura Proposta
+                        </h2>
+                        <p className="text-gray-700 mb-4">
+                            O frontend oferece interfaces ricas, o SSR entrega páginas prontas e
+                            otimizadas, o buffer garante respostas rápidas usando dados em
+                            memória, e o backend cuida da lógica, persistência e processamento
+                            assíncrono.
+                        </p>
+                        <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                            Fluxo principal
+                        </h3>
+                        <pre className="bg-gray-100 p-4 rounded mb-4 text-gray-700 overflow-x-auto">
+                            <code className="font-mono">
+                                <span className="text-blue-500 text-wrap">Frontend (React/Next.js)</span>
+                                <br />
+                                <GoArrowDown className="inline-block mx-2 text-gray-500" />
+                                <br />
+                                <span className="text-green-500 text-wrap">Server SSR (Next.js/Node.js)</span>
+                                <br />
+                                <GoArrowDown className="inline-block mx-2 text-gray-500" />
+                                <br />
+                                <span className="text-yellow-500 text-wrap">Buffer (Redis/Memcached)</span>
+                                <br />
+                                <GoArrowDown className="inline-block mx-2 text-gray-500" />
+                                <br />
+                                <span className="text-orange-500 text-wrap">Backend (Laravel, MySQL, Workers, etc)</span>
+                            </code>
+                        </pre>
+                        <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                            Descrição do Fluxo
+                        </h3>
+                        <ul className="list-disc list-inside text-gray-700 space-y-2">
+                            <li>
+                                <strong>Frontend:</strong> Utiliza React com Next.js e TypeScript;
+                                consome páginas e dados já otimizados, prontos para renderização e
+                                navegação rápida.
+                            </li>
+                            <li>
+                                <strong>Server SSR:</strong> Servidor de SSR renderiza as páginas no
+                                servidor com dados reais antes de enviá-las ao navegador;
+                                proporciona carregamento inicial mais rápido e SEO aprimorado;
+                                aplica lógicas de autenticação, pré-busca, cache e PWA.
+                            </li>
+                            <li>
+                                <strong>Buffer:</strong> Utiliza Redis ou Memcached como camada de
+                                cache em memória, armazenando dados semi-estáticos ou altamente
+                                requisitados para respostas rápidas.
+                            </li>
+                            <li>
+                                <strong>Backend:</strong> Responsável por regras de negócio,
+                                persistência definitiva, processamento assíncrono (jobs, IA,
+                                relatórios) e atualização do buffer, desacoplando-se da renderização.
+                            </li>
+                        </ul>
+                    </section>
+                </div>
 
                 {/* Tech Sections */}
                 <div className="flex flex-col space-y-10">
                     {/* Frontend Section */}
-                    <section id="secao-frontend" className="flex-1">
+                    <section id="frontend-section" className="flex-1 pt-18 -mb-2">
                         <div className="mb-4 flex justify-center lg:justify-start items-center pt-4">
                             <div className="h-1 w-12 bg-blue-500 rounded-full mr-3"></div>
                             <h2 className="text-2xl font-semibold text-gray-800">
                                 Tecnologias Frontend
                             </h2>
                         </div>
-                        <p className="mb-6 text-gray-700 text-center lg:text-left">
+                        <p className="-mb-16 text-gray-700 text-center lg:text-left">
                             Sugestões de stack para o frontend
                         </p>
-                        <div className="bg-white shadow-md rounded-lg p-4 sm:p-6 overflow-x-auto">
-                            <TechTable columns={frontendColumns} items={frontendTech} />
+                        <div id="frontend-table" className="pt-20 -mb-16">
+                            <div className="bg-white shadow-md rounded-lg p-4 sm:p-6 overflow-x-auto mb-4">
+                                <TechTable id="ft" columns={frontendColumns} items={frontendTech} />
+                            </div>
+                        </div>
+
+                        {/* Tech Details */}
+                        <div id="detail-frontend" className="pt-20 -mb-16">
+                            <TechDetailsSection id="df" colorTitle="bg-blue-500" title="Detalhes das Tecnologias Frontend" items={frontendDetails} />
                         </div>
                     </section>
 
                     {/* Backend Section */}
-                    <section id="secao-backend" className="flex-1">
+                    <section id="backend-section" className="flex-1 pt-18 -mb-2">
                         <div className="mb-4 flex justify-center lg:justify-start items-center pt-4">
                             <div className="h-1 w-12 bg-green-500 rounded-full mr-3"></div>
                             <h2 className="text-2xl font-semibold text-gray-800">
@@ -146,13 +165,20 @@ const HomePage: React.FC = () => {
                         <p className="mb-6 text-gray-700 text-center lg:text-left">
                             Sugestões de stack para o backend
                         </p>
-                        <div className="bg-white shadow-md rounded-lg p-4 sm:p-6 overflow-x-auto">
-                            <TechTable columns={backendColumns} items={backendTech} />
+                        <div id="backend-table" className="-mb-14">
+                            <div className="bg-white shadow-md rounded-lg p-4 sm:p-6 overflow-x-auto">
+                                <TechTable id="bt" columns={backendColumns} items={backendTech} />
+                            </div>
+                        </div>
+
+                        {/* Tech Details */}
+                        <div id="detail-backend" className="pt-20 -mb-16">
+                            <TechDetailsSection id="db" colorTitle="bg-green-500" title="Detalhes das Tecnologias Backend" items={backendDetails} />
                         </div>
                     </section>
 
                     {/* SSR Section */}
-                    <section id="secao-ssr" className="flex-1">
+                    <section id="ssr-section" className="flex-1 pt-18 -mb-16">
                         <div className="mb-4 flex justify-center lg:justify-start items-center pt-4">
                             <div className="h-1 w-12 bg-purple-500 rounded-full mr-3"></div>
                             <h2 className="text-2xl font-semibold text-gray-800">
@@ -162,13 +188,21 @@ const HomePage: React.FC = () => {
                         <p className="mb-6 text-gray-700 text-center lg:text-left">
                             Sugestões de stack para Server-Side Rendering
                         </p>
-                        <div className="bg-white shadow-md rounded-lg p-4 sm:p-6 overflow-x-auto">
-                            <TechTable columns={ssrColumns} items={ssrTech} />
+
+                        <div id="ssr-table" className="-mb-14">
+                            <div className="bg-white shadow-md rounded-lg p-4 sm:p-6 overflow-x-auto">
+                                <TechTable id="st" columns={ssrColumns} items={ssrTech} />
+                            </div>
+                        </div>
+
+                        {/* Tech Details */}
+                        <div id="detail-ssr" className="pt-20 -mb-16">
+                            <TechDetailsSection id="ds" colorTitle="bg-purple-500" title="Detalhes das Tecnologias SSR" items={ssrDetails} />
                         </div>
                     </section>
 
                     {/* Patterns Section */}
-                    <section id="secao-padroes" className="flex-1">
+                    <section id="secao-padroes" className="flex-1 pt-18">
                         <div className="mb-6 flex justify-center lg:justify-start items-center pt-4">
                             <div className="h-1 w-12 bg-yellow-500 rounded-full mr-3"></div>
                             <h2 className="text-2xl font-semibold text-gray-800">
@@ -201,7 +235,7 @@ const HomePage: React.FC = () => {
                                     {pat.fullDescription}
                                 </div>
                                 <div className="bg-white shadow-md rounded-lg p-4 sm:p-6 overflow-x-auto">
-                                    <TechTable
+                                    <TechTable id={`table-${pat.id}`}
                                         columns={getPatternColumns(
                                             typeof pat.title === 'string' ? pat.title : String(pat.title)
                                         )}
