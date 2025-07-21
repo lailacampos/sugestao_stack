@@ -1,3 +1,4 @@
+// src/data/patterns.tsx
 import { 
     FaBalanceScale, 
     FaBolt, 
