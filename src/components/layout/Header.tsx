@@ -7,7 +7,7 @@ import { MdOutlineMenu } from "react-icons/md";
 const Header: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [openPath, setOpenPath] = useState<string[]>([]);
-    const closeTimeout = useRef<NodeJS.Timeout | null>(null);
+    const closeTimeout = useRef<number | null>(null);
 
     // Função para delay ao sair do menu
     const handleMenuLeave = (level: number) => {
