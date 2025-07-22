@@ -17,9 +17,9 @@ const HomePage: React.FC = () => {
     });
 
     return (
-        
+        <div><Header />
         <div id="top" className="min-h-screen bg-gray-50 flex justify-center px-4 py-8 overflow-hidden">
-            <Header />
+           
             <div className="w-full md:max-w-4xl max-w-3xl pt-18">
                 {/* Header */}
                 <div className="mb-10 text-center lg:text-left">
@@ -248,6 +248,7 @@ const HomePage: React.FC = () => {
 
                 </div>
             </div>
+        </div>
         </div>
     );
 };
