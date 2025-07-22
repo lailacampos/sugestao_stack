@@ -1,5 +1,3 @@
-
-// src/pages/HomePage.tsx
 import Header from "../components/layout/Header";
 import { frontendColumns, backendColumns, ssrColumns, getPatternColumns } from "../config/tableColumns";
 import { TechTable } from "../components/Table/TechTable";
@@ -11,241 +9,231 @@ import { GoArrowDown } from "react-icons/go";
 import softwareEngineeringIcon from "../assets/software_engineering.svg";
 
 const HomePage: React.FC = () => {
-
+    // Apenas debug, pode remover se quiser
     frontendDetails.map(detail => {
         console.log(detail);
     });
 
     return (
-        
-        <div id="top" className="min-h-screen bg-gray-50 flex justify-center px-4 py-8 overflow-hidden">
+        <div>
+            {/* HEADER FIXO */}
             <Header />
-            <div className="w-full md:max-w-4xl max-w-3xl pt-18">
-                {/* Header */}
-                <div className="mb-10 text-center lg:text-left">
-                    <div className="flex flex-col lg:flex-row items-center mb-4">
-                        <img
-                            src={softwareEngineeringIcon}
-                            alt="Software Engineering Icon"
-                            className="lg:mx-0 w-16 h-16"
-                        />
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 ml-4">
-                            Tech Stack
-                        </h1>
+
+            {/* Conteúdo principal com padding para não ficar atrás do header */}
+             <div
+                id="top"
+                className="min-h-screen bg-gray-50 flex justify-center px-4 py-8 overflow-hidden pt-16"
+            >
+                <div className="w-full md:max-w-4xl max-w-3xl">
+                    {/* Header visual interno */}
+                    <div className="mb-10 text-center lg:text-left">
+                        <div className="flex flex-col lg:flex-row items-center mb-4">
+                            <img
+                                src={softwareEngineeringIcon}
+                                alt="Software Engineering Icon"
+                                className="lg:mx-0 w-16 h-16"
+                            />
+                            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 ml-4">
+                                Tech Stack
+                            </h1>
+                        </div>
+                        <p className="mt-2 text-gray-600 max-w-2xl mx-auto lg:mx-0">
+                            Sugestões de tecnologias e padronizações
+                            para o desenvolvimento de sistema intermediário e avançado
+                            utilizando React, Next.js, SSR, Laravel e mais.
+                        </p>
                     </div>
-                    <p className="mt-2 text-gray-600 max-w-2xl mx-auto lg:mx-0">
-                        Sugestões de tecnologias e padronizações
-                        para o desenvolvimento de sistema intermediário e avançado
-                        utilizando React, Next.js, SSR, Laravel e mais.
-                    </p>
-                </div>
 
-                {/* Quick Navigation Links */}
-                <nav className="flex flex-wrap justify-center lg:justify-start space-x-6 -mb-8">
-                    <a
-                        href="#frontend-section"
-                        className="text-blue-500 hover:underline font-medium"
-                    >
-                        Frontend
-                    </a>
-                    <a
-                        href="#secao-backend"
-                        className="text-green-500 hover:underline font-medium"
-                    >
-                        Backend
-                    </a>
-                    <a
-                        href="#secao-ssr"
-                        className="text-purple-500 hover:underline font-medium"
-                    >
-                        SSR
-                    </a>
-                    <a
-                        href="#secao-padroes"
-                        className="text-yellow-500 hover:underline font-medium"
-                    >
-                        Padrões
-                    </a>
-                </nav>
+                    {/* Quick Navigation Links */}
+                    <nav className="flex flex-wrap justify-center lg:justify-start space-x-6 -mb-8">
+                        <a href="#frontend-section" className="text-blue-500 hover:underline font-medium">
+                            Frontend
+                        </a>
+                        <a href="#backend-section" className="text-green-500 hover:underline font-medium">
+                            Backend
+                        </a>
+                        <a href="#ssr-section" className="text-purple-500 hover:underline font-medium">
+                            SSR
+                        </a>
+                        <a href="#secao-padroes" className="text-yellow-500 hover:underline font-medium">
+                            Padrões
+                        </a>
+                    </nav>
 
-                {/* Document Presentation */}
-                <div id="summary" className="pt-18 -mb-16">
-                    <section className="bg-white shadow-md rounded-lg p-6 mb-10">
-                        <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-                            Resumo da Arquitetura Proposta
-                        </h2>
-                        <p className="text-gray-700 mb-4">
-                            O frontend oferece interfaces ricas, o SSR entrega páginas prontas e
-                            otimizadas, o buffer garante respostas rápidas usando dados em
-                            memória, e o backend cuida da lógica, persistência e processamento
-                            assíncrono.
-                        </p>
-                        <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                            Fluxo principal
-                        </h3>
-                        <pre className="bg-gray-100 p-4 rounded mb-4 text-gray-700 overflow-x-auto">
-                            <code className="font-mono">
-                                <span className="text-blue-500 text-wrap">Frontend (React/Next.js)</span>
-                                <br />
-                                <GoArrowDown className="inline-block mx-2 text-gray-500" />
-                                <br />
-                                <span className="text-green-500 text-wrap">Server SSR (Next.js/Node.js)</span>
-                                <br />
-                                <GoArrowDown className="inline-block mx-2 text-gray-500" />
-                                <br />
-                                <span className="text-yellow-500 text-wrap">Buffer (Redis/Memcached)</span>
-                                <br />
-                                <GoArrowDown className="inline-block mx-2 text-gray-500" />
-                                <br />
-                                <span className="text-orange-500 text-wrap">Backend (Laravel, MySQL, Workers, etc)</span>
-                            </code>
-                        </pre>
-                        <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                            Descrição do Fluxo
-                        </h3>
-                        <ul className="list-disc list-inside text-gray-700 space-y-2">
-                            <li>
-                                <strong>Frontend:</strong> Utiliza React com Next.js e TypeScript;
-                                consome páginas e dados já otimizados, prontos para renderização e
-                                navegação rápida.
-                            </li>
-                            <li>
-                                <strong>Server SSR:</strong> Servidor de SSR renderiza as páginas no
-                                servidor com dados reais antes de enviá-las ao navegador;
-                                proporciona carregamento inicial mais rápido e SEO aprimorado;
-                                aplica lógicas de autenticação, pré-busca, cache e PWA.
-                            </li>
-                            <li>
-                                <strong>Buffer:</strong> Utiliza Redis ou Memcached como camada de
-                                cache em memória, armazenando dados semi-estáticos ou altamente
-                                requisitados para respostas rápidas.
-                            </li>
-                            <li>
-                                <strong>Backend:</strong> Responsável por regras de negócio,
-                                persistência definitiva, processamento assíncrono (jobs, IA,
-                                relatórios) e atualização do buffer, desacoplando-se da renderização.
-                            </li>
-                        </ul>
-                    </section>
-                </div>
-
-                {/* Tech Sections */}
-                <div className="flex flex-col space-y-10">
-                    {/* Frontend Section */}
-                    <section id="frontend-section" className="flex-1 pt-18 -mb-2">
-                        <div className="mb-4 flex justify-center lg:justify-start items-center pt-4">
-                            <div className="h-1 w-12 bg-blue-500 rounded-full mr-3"></div>
-                            <h2 className="text-2xl font-semibold text-gray-800">
-                                Tecnologias Frontend
+                    {/* Document Presentation */}
+                    <div id="summary" className="pt-18 -mb-16">
+                        <section className="bg-white shadow-md rounded-lg p-6 mb-10">
+                            <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+                                Resumo da Arquitetura Proposta
                             </h2>
-                        </div>
-                        <p className="-mb-16 text-gray-700 text-center lg:text-left">
-                            Sugestões de stack para o frontend
-                        </p>
-                        <div id="frontend-table" className="pt-20 -mb-16">
-                            <div className="bg-white shadow-md rounded-lg p-4 sm:p-6 overflow-x-auto mb-4">
-                                <TechTable id="ft" columns={frontendColumns} items={frontendTech} />
+                            <p className="text-gray-700 mb-4">
+                                O frontend oferece interfaces ricas, o SSR entrega páginas prontas e
+                                otimizadas, o buffer garante respostas rápidas usando dados em
+                                memória, e o backend cuida da lógica, persistência e processamento
+                                assíncrono.
+                            </p>
+                            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                                Fluxo principal
+                            </h3>
+                            <pre className="bg-gray-100 p-4 rounded mb-4 text-gray-700 overflow-x-auto">
+                                <code className="font-mono">
+                                    <span className="text-blue-500 text-wrap">Frontend (React/Next.js)</span>
+                                    <br />
+                                    <GoArrowDown className="inline-block mx-2 text-gray-500" />
+                                    <br />
+                                    <span className="text-green-500 text-wrap">Server SSR (Next.js/Node.js)</span>
+                                    <br />
+                                    <GoArrowDown className="inline-block mx-2 text-gray-500" />
+                                    <br />
+                                    <span className="text-yellow-500 text-wrap">Buffer (Redis/Memcached)</span>
+                                    <br />
+                                    <GoArrowDown className="inline-block mx-2 text-gray-500" />
+                                    <br />
+                                    <span className="text-orange-500 text-wrap">Backend (Laravel, MySQL, Workers, etc)</span>
+                                </code>
+                            </pre>
+                            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                                Descrição do Fluxo
+                            </h3>
+                            <ul className="list-disc list-inside text-gray-700 space-y-2">
+                                <li>
+                                    <strong>Frontend:</strong> Utiliza React com Next.js e TypeScript;
+                                    consome páginas e dados já otimizados, prontos para renderização e
+                                    navegação rápida.
+                                </li>
+                                <li>
+                                    <strong>Server SSR:</strong> Servidor de SSR renderiza as páginas no
+                                    servidor com dados reais antes de enviá-las ao navegador;
+                                    proporciona carregamento inicial mais rápido e SEO aprimorado;
+                                    aplica lógicas de autenticação, pré-busca, cache e PWA.
+                                </li>
+                                <li>
+                                    <strong>Buffer:</strong> Utiliza Redis ou Memcached como camada de
+                                    cache em memória, armazenando dados semi-estáticos ou altamente
+                                    requisitados para respostas rápidas.
+                                </li>
+                                <li>
+                                    <strong>Backend:</strong> Responsável por regras de negócio,
+                                    persistência definitiva, processamento assíncrono (jobs, IA,
+                                    relatórios) e atualização do buffer, desacoplando-se da renderização.
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+
+                    {/* Tech Sections */}
+                    <div className="flex flex-col space-y-10">
+                        {/* Frontend Section */}
+                        <section id="frontend-section" className="flex-1 pt-18 -mb-2">
+                            <div className="mb-4 flex justify-center lg:justify-start items-center pt-4">
+                                <div className="h-1 w-12 bg-blue-500 rounded-full mr-3"></div>
+                                <h2 className="text-2xl font-semibold text-gray-800">
+                                    Tecnologias Frontend
+                                </h2>
                             </div>
-                        </div>
-
-                        {/* Tech Details */}
-                        <div id="detail-frontend" className="pt-20 -mb-16">
-                            <TechDetailsSection id="df" colorTitle="bg-blue-500" title="Detalhes das Tecnologias Frontend" items={frontendDetails} />
-                        </div>
-                    </section>
-
-                    {/* Backend Section */}
-                    <section id="backend-section" className="flex-1 pt-18 -mb-2">
-                        <div className="mb-4 flex justify-center lg:justify-start items-center pt-4">
-                            <div className="h-1 w-12 bg-green-500 rounded-full mr-3"></div>
-                            <h2 className="text-2xl font-semibold text-gray-800">
-                                Tecnologias Backend
-                            </h2>
-                        </div>
-                        <p className="mb-6 text-gray-700 text-center lg:text-left">
-                            Sugestões de stack para o backend
-                        </p>
-                        <div id="backend-table" className="-mb-14">
-                            <div className="bg-white shadow-md rounded-lg p-4 sm:p-6 overflow-x-auto">
-                                <TechTable id="bt" columns={backendColumns} items={backendTech} />
-                            </div>
-                        </div>
-
-                        {/* Tech Details */}
-                        <div id="detail-backend" className="pt-20 -mb-16">
-                            <TechDetailsSection id="db" colorTitle="bg-green-500" title="Detalhes das Tecnologias Backend" items={backendDetails} />
-                        </div>
-                    </section>
-
-                    {/* SSR Section */}
-                    <section id="ssr-section" className="flex-1 pt-18 -mb-16">
-                        <div className="mb-4 flex justify-center lg:justify-start items-center pt-4">
-                            <div className="h-1 w-12 bg-purple-500 rounded-full mr-3"></div>
-                            <h2 className="text-2xl font-semibold text-gray-800">
-                                Tecnologias SSR
-                            </h2>
-                        </div>
-                        <p className="mb-6 text-gray-700 text-center lg:text-left">
-                            Sugestões de stack para Server-Side Rendering
-                        </p>
-
-                        <div id="ssr-table" className="-mb-14">
-                            <div className="bg-white shadow-md rounded-lg p-4 sm:p-6 overflow-x-auto">
-                                <TechTable id="st" columns={ssrColumns} items={ssrTech} />
-                            </div>
-                        </div>
-
-                        {/* Tech Details */}
-                        <div id="detail-ssr" className="pt-20 -mb-16">
-                            <TechDetailsSection id="ds" colorTitle="bg-purple-500" title="Detalhes das Tecnologias SSR" items={ssrDetails} />
-                        </div>
-                    </section>
-
-                    {/* Patterns Section */}
-                    <section id="secao-padroes" className="flex-1 pt-18">
-                        <div className="mb-6 flex justify-center lg:justify-start items-center pt-4">
-                            <div className="h-1 w-12 bg-yellow-500 rounded-full mr-3"></div>
-                            <h2 className="text-2xl font-semibold text-gray-800">
-                                Padrões de Projeto & Arquitetura
-                            </h2>
-                        </div>
-
-                        {/* Overview Cards */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-                            {patterns.map((pat) => (
-                                <a
-                                    key={pat.id}
-                                    href={`#detalhe-${pat.id}`}
-                                    className="block p-4 bg-white rounded-lg shadow hover:shadow-lg transition"
-                                >
-                                    <h3 className="text-lg font-medium text-gray-800">{pat.title}</h3>
-                                    <div className="mt-2 text-gray-600 text-sm line-clamp-3">
-                                        {pat.shortDescription}
-                                    </div>
-                                </a>
-                            ))}
-                        </div>
-                        {/* Detailed Sections */}
-                        {patterns.map((pat) => (
-                            <div key={pat.id} id={`detalhe-${pat.id}`} className="mb-12">
-                                <h3 className="text-xl font-semibold text-gray-800 mb-4 pt-4">
-                                    {pat.title}
-                                </h3>
-                                <div className="text-gray-700 mb-6">
-                                    {pat.fullDescription}
+                            <p className="-mb-16 text-gray-700 text-center lg:text-left">
+                                Sugestões de stack para o frontend
+                            </p>
+                            <div id="frontend-table" className="pt-20 -mb-16">
+                                <div className="bg-white shadow-md rounded-lg p-4 sm:p-6 overflow-x-auto mb-4">
+                                    <TechTable id="ft" columns={frontendColumns} items={frontendTech} />
                                 </div>
+                            </div>
+                            {/* Tech Details */}
+                            <div id="detail-frontend" className="pt-20 -mb-16">
+                                <TechDetailsSection id="df" colorTitle="bg-blue-500" title="Detalhes das Tecnologias Frontend" items={frontendDetails} />
+                            </div>
+                        </section>
+
+                        {/* Backend Section */}
+                        <section id="backend-section" className="flex-1 pt-18 -mb-2">
+                            <div className="mb-4 flex justify-center lg:justify-start items-center pt-4">
+                                <div className="h-1 w-12 bg-green-500 rounded-full mr-3"></div>
+                                <h2 className="text-2xl font-semibold text-gray-800">
+                                    Tecnologias Backend
+                                </h2>
+                            </div>
+                            <p className="mb-6 text-gray-700 text-center lg:text-left">
+                                Sugestões de stack para o backend
+                            </p>
+                            <div id="backend-table" className="-mb-14">
                                 <div className="bg-white shadow-md rounded-lg p-4 sm:p-6 overflow-x-auto">
-                                    <TechTable id={`table-${pat.id}`}
-                                        columns={getPatternColumns(
-                                            typeof pat.title === 'string' ? pat.title : String(pat.title)
-                                        )}
-                                        items={pat.comparisonRows}
-                                    />
+                                    <TechTable id="bt" columns={backendColumns} items={backendTech} />
                                 </div>
                             </div>
-                        ))}
-                    </section>
+                            {/* Tech Details */}
+                            <div id="detail-backend" className="pt-20 -mb-16">
+                                <TechDetailsSection id="db" colorTitle="bg-green-500" title="Detalhes das Tecnologias Backend" items={backendDetails} />
+                            </div>
+                        </section>
 
+                        {/* SSR Section */}
+                        <section id="ssr-section" className="flex-1 pt-18 -mb-16">
+                            <div className="mb-4 flex justify-center lg:justify-start items-center pt-4">
+                                <div className="h-1 w-12 bg-purple-500 rounded-full mr-3"></div>
+                                <h2 className="text-2xl font-semibold text-gray-800">
+                                    Tecnologias SSR
+                                </h2>
+                            </div>
+                            <p className="mb-6 text-gray-700 text-center lg:text-left">
+                                Sugestões de stack para Server-Side Rendering
+                            </p>
+                            <div id="ssr-table" className="-mb-14">
+                                <div className="bg-white shadow-md rounded-lg p-4 sm:p-6 overflow-x-auto">
+                                    <TechTable id="st" columns={ssrColumns} items={ssrTech} />
+                                </div>
+                            </div>
+                            {/* Tech Details */}
+                            <div id="detail-ssr" className="pt-20 -mb-16">
+                                <TechDetailsSection id="ds" colorTitle="bg-purple-500" title="Detalhes das Tecnologias SSR" items={ssrDetails} />
+                            </div>
+                        </section>
+
+                        {/* Patterns Section */}
+                        <section id="secao-padroes" className="flex-1 pt-18">
+                            <div className="mb-6 flex justify-center lg:justify-start items-center pt-4">
+                                <div className="h-1 w-12 bg-yellow-500 rounded-full mr-3"></div>
+                                <h2 className="text-2xl font-semibold text-gray-800">
+                                    Padrões de Projeto & Arquitetura
+                                </h2>
+                            </div>
+                            {/* Overview Cards */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+                                {patterns.map((pat) => (
+                                    <a
+                                        key={pat.id}
+                                        href={`#detalhe-${pat.id}`}
+                                        className="block p-4 bg-white rounded-lg shadow hover:shadow-lg transition"
+                                    >
+                                        <h3 className="text-lg font-medium text-gray-800">{pat.title}</h3>
+                                        <div className="mt-2 text-gray-600 text-sm line-clamp-3">
+                                            {pat.shortDescription}
+                                        </div>
+                                    </a>
+                                ))}
+                            </div>
+                            {/* Detailed Sections */}
+                            {patterns.map((pat) => (
+                                <div key={pat.id} id={`detalhe-${pat.id}`} className="mb-12">
+                                    <h3 className="text-xl font-semibold text-gray-800 mb-4 pt-4">
+                                        {pat.title}
+                                    </h3>
+                                    <div className="text-gray-700 mb-6">
+                                        {pat.fullDescription}
+                                    </div>
+                                    <div className="bg-white shadow-md rounded-lg p-4 sm:p-6 overflow-x-auto">
+                                        <TechTable
+                                            id={`table-${pat.id}`}
+                                            columns={getPatternColumns(
+                                                typeof pat.title === "string" ? pat.title : String(pat.title)
+                                            )}
+                                            items={pat.comparisonRows}
+                                        />
+                                    </div>
+                                </div>
+                            ))}
+                        </section>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,3 +1,4 @@
+// src/components/layout/Header.tsx
 import React, { useState, useRef } from 'react';
 import { menuItems } from "../../config/menuItems";
 import type { MenuItem } from '../../config/menuItems';
@@ -9,11 +10,10 @@ const Header: React.FC = () => {
     const [openPath, setOpenPath] = useState<string[]>([]);
     const closeTimeout = useRef<number | null>(null);
 
-    // Função para delay ao sair do menu
     const handleMenuLeave = (level: number) => {
         closeTimeout.current = setTimeout(() => {
             setOpenPath(openPath.slice(0, level));
-        }, 160); // Delay de 160ms
+        }, 160);
     };
 
     const handleMenuEnter = (path: string[]) => {
@@ -22,11 +22,8 @@ const Header: React.FC = () => {
     };
 
     return (
-        <header className="navbar fixed top-0 left-0 z-50 shadow-lg bg-gray-50 text-gray-800 w-full backdrop-blur-md justify-start">
+        <header className="navbar fixed top-0 left-0 z-50 shadow-lg bg-gray-50 text-gray-800 w-full backdrop-blur-md h-16 flex items-center">
             <div className="container mx-auto px-4 flex justify-between items-center h-16">
-
-                
-
                 {/* Desktop Menu */}
                 <nav className="hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -42,10 +39,10 @@ const Header: React.FC = () => {
                                     {item.children && <GoChevronDown className="text-lg" />}
                                 </a>
                                 {item.children && (
-                                    <ul className={
-                                        `absolute top-full left-0 mt-0 p-2 shadow-lg bg-gray-50 text-gray-800 rounded z-50 min-w-[220px]
-                                        ${openPath[0] === item.id ? 'opacity-100 visible' : 'opacity-0 invisible'}`
-                                    }>
+                                    <ul className={`
+                                        absolute top-full left-0 mt-0 p-2 shadow-lg bg-gray-50 text-gray-800 rounded z-50 min-w-[220px]
+                                        ${openPath[0] === item.id ? 'opacity-100 visible' : 'opacity-0 invisible'}
+                                    `}>
                                         {item.children.map((sub: MenuItem) => (
                                             <li
                                                 key={sub.id}
@@ -58,10 +55,10 @@ const Header: React.FC = () => {
                                                     {sub.children && <GoChevronDown className="ml-2 text-xs align-middle" />}
                                                 </a>
                                                 {sub.children && (
-                                                    <ul className={
-                                                        `absolute bg-gray-50 text-gray-800 top-0 left-full ml-1 p-2 shadow-lg rounded z-50 min-w-[220px]
-                                                        ${(openPath[0] === item.id && openPath[1] === sub.id) ? 'opacity-100 visible' : 'opacity-0 invisible'}`
-                                                    }>
+                                                    <ul className={`
+                                                        absolute bg-gray-50 text-gray-800 top-0 left-full ml-1 p-2 shadow-lg rounded z-50 min-w-[220px]
+                                                        ${(openPath[0] === item.id && openPath[1] === sub.id) ? 'opacity-100 visible' : 'opacity-0 invisible'}
+                                                    `}>
                                                         {sub.children.map((subSub: MenuItem) => (
                                                             <li key={subSub.id}>
                                                                 <a
@@ -83,18 +80,23 @@ const Header: React.FC = () => {
                     </ul>
                 </nav>
 
+                {/* Logo / Home Link */}
+                <a href="#top" className="btn btn-ghost normal-case text-xl">
+                    Tech Stack
+                </a>
+
                 {/* Mobile Toggle Button */}
                 <button
                     className="lg:hidden p-2"
                     onClick={() => setIsMenuOpen((o) => !o)}
-                    aria-title="Toggle menu"
+                    aria-label="Toggle menu"
                 >
                     {isMenuOpen ? <GoX size={24} /> : <MdOutlineMenu size={24} />}
                 </button>
             </div>
 
             {/* Mobile Menu */}
-            <div className={`${isMenuOpen ? 'block' : 'hidden'} lg:hidden`}>
+            <div className={`${isMenuOpen ? 'block' : 'hidden'} lg:hidden absolute top-16 left-0 w-full bg-gray-50 shadow-lg z-40`}>
                 <ul className="menu menu-compact px-4 py-2">
                     {menuItems.map((item: MenuItem) => (
                         <React.Fragment key={item.id}>
@@ -115,10 +117,6 @@ const Header: React.FC = () => {
                     ))}
                 </ul>
             </div>
-            {/* Logo / Home Link */}
-                <a href="#top" className="btn btn-ghost normal-case text-xl">
-                    Tech Stack
-                </a>
         </header>
     );
 };
