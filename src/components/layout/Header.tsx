@@ -22,7 +22,7 @@ const Header: React.FC = () => {
     };
 
     return (
-        <header className="navbar fixed top-0 left-0 z-50 shadow-lg bg-gray-50 text-gray-800 w-full backdrop-blur-md h-16 flex items-center">
+        <header className="navbar fixed top-0 left-0 z-50 shadow-md bg-gray-50 text-gray-800 w-full backdrop-blur-md h-16 flex items-center">
             <div className="container mx-auto px-4 flex justify-between items-center h-16">
                 {/* Desktop Menu */}
                 <nav className="hidden lg:flex">
@@ -50,7 +50,7 @@ const Header: React.FC = () => {
                                                 onMouseEnter={() => handleMenuEnter([item.id, sub.id])}
                                                 onMouseLeave={() => handleMenuLeave(1)}
                                             >
-                                                <a href={sub.href} className="block px-4 py-2 whitespace-nowrap hover:bg-gray-100 flex items-center">
+                                                <a href={sub.href} className="px-4 py-2 whitespace-nowrap hover:bg-gray-100 flex items-center">
                                                     {sub.title}
                                                     {sub.children && <GoChevronDown className="ml-2 text-xs align-middle" />}
                                                 </a>
