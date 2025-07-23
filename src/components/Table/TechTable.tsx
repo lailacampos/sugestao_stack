@@ -6,14 +6,14 @@ export interface ColumnConfig<T> {
 }
 
 export interface TechTableProps<T> {
-    id: string;
-    columns: ColumnConfig<T>[];
-    items: T[];
+  columns: ColumnConfig<T>[];
+  items: T[];
 }
 
-export const TechTable = <T,>({ id, columns, items }: TechTableProps<T>) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const TechTable = <T extends Record<string, any>>({ columns, items }: TechTableProps<T>) => {
     return (
-        <div className="overflow-x-auto" id={id}>
+        <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-200">
                 <thead className="bg-white">
                     <tr>
