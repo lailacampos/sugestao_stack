@@ -1,31 +1,23 @@
 import Header from "../components/layout/Header";
-import { frontendColumns, backendColumns, ssrColumns, getPatternColumns } from "../config/tableColumns";
+import { getPatternColumns } from "../config/tableColumns";
 import { TechTable } from "../components/Table/TechTable";
-import { TechDetailsSection } from "../components/TechDetailsSection/TechDetailsSection";
-import { frontendTech, backendTech, ssrTech } from "../data/techTableData";
-import { frontendDetails, backendDetails, ssrDetails } from "../data/techDetails";
+import { techStackSectionsData, type TechStackSectionProps } from "../data/techStackSectionsData";
 import { patterns } from "../data/patterns";
 import { GoArrowDown } from "react-icons/go";
 import softwareEngineeringIcon from "../assets/software_engineering.svg";
+import TechStackSection from "../components/TechStackSection/TechStackSection";
+import type { BackendTechItem, FrontendTechItem } from "../data/techTableData";
 
 const HomePage: React.FC = () => {
-    // Apenas debug, pode remover se quiser
-    frontendDetails.map(detail => {
-        console.log(detail);
-    });
-
     return (
         <div>
             {/* HEADER FIXO */}
             <Header />
 
-            {/* Conteúdo principal com padding para não ficar atrás do header */}
-             <div
-                id="top"
-                className="min-h-screen bg-gray-50 flex justify-center px-4 py-8 overflow-hidden pt-16"
+             <div id="top"
+                className="min-h-screen bg-gray-50 flex justify-center px-4 py-8 overflow-hidden pt-16 scroll-mt-20"
             >
                 <div className="w-full md:max-w-4xl max-w-3xl">
-                    {/* Header visual interno */}
                     <div className="mb-10 text-center lg:text-left">
                         <div className="flex flex-col lg:flex-row items-center mb-4">
                             <img
@@ -45,7 +37,7 @@ const HomePage: React.FC = () => {
                     </div>
 
                     {/* Quick Navigation Links */}
-                    <nav className="flex flex-wrap justify-center lg:justify-start space-x-6 -mb-8">
+                    <nav className="flex flex-wrap justify-center lg:justify-start space-x-6">
                         <a href="#frontend-section" className="text-blue-500 hover:underline font-medium">
                             Frontend
                         </a>
@@ -61,7 +53,7 @@ const HomePage: React.FC = () => {
                     </nav>
 
                     {/* Document Presentation */}
-                    <div id="summary" className="pt-18 -mb-16">
+                    <div id="summary" className="pt-10 scroll-mt-12">
                         <section className="bg-white shadow-md rounded-lg p-6 mb-10">
                             <h2 className="text-2xl font-semibold text-gray-800 mb-4">
                                 Resumo da Arquitetura Proposta
@@ -123,74 +115,56 @@ const HomePage: React.FC = () => {
 
                     {/* Tech Sections */}
                     <div className="flex flex-col space-y-10">
-                        {/* Frontend Section */}
-                        <section id="frontend-section" className="flex-1 pt-18 -mb-2">
-                            <div className="mb-4 flex justify-center lg:justify-start items-center pt-4">
-                                <div className="h-1 w-12 bg-blue-500 rounded-full mr-3"></div>
-                                <h2 className="text-2xl font-semibold text-gray-800">
-                                    Tecnologias Frontend
-                                </h2>
-                            </div>
-                            <p className="-mb-16 text-gray-700 text-center lg:text-left">
-                                Sugestões de stack para o frontend
-                            </p>
-                            <div id="frontend-table" className="pt-20 -mb-16">
-                                <div className="bg-white shadow-md rounded-lg p-4 sm:p-6 overflow-x-auto mb-4">
-                                    <TechTable id="ft" columns={frontendColumns} items={frontendTech} />
-                                </div>
-                            </div>
-                            {/* Tech Details */}
-                            <div id="detail-frontend" className="pt-20 -mb-16">
-                                <TechDetailsSection id="df" colorTitle="bg-blue-500" title="Detalhes das Tecnologias Frontend" items={frontendDetails} />
-                            </div>
-                        </section>
 
-                        {/* Backend Section */}
-                        <section id="backend-section" className="flex-1 pt-18 -mb-2">
-                            <div className="mb-4 flex justify-center lg:justify-start items-center pt-4">
-                                <div className="h-1 w-12 bg-green-500 rounded-full mr-3"></div>
-                                <h2 className="text-2xl font-semibold text-gray-800">
-                                    Tecnologias Backend
-                                </h2>
-                            </div>
-                            <p className="mb-6 text-gray-700 text-center lg:text-left">
-                                Sugestões de stack para o backend
-                            </p>
-                            <div id="backend-table" className="-mb-14">
-                                <div className="bg-white shadow-md rounded-lg p-4 sm:p-6 overflow-x-auto">
-                                    <TechTable id="bt" columns={backendColumns} items={backendTech} />
-                                </div>
-                            </div>
-                            {/* Tech Details */}
-                            <div id="detail-backend" className="pt-20 -mb-16">
-                                <TechDetailsSection id="db" colorTitle="bg-green-500" title="Detalhes das Tecnologias Backend" items={backendDetails} />
-                            </div>
-                        </section>
-
-                        {/* SSR Section */}
-                        <section id="ssr-section" className="flex-1 pt-18 -mb-16">
-                            <div className="mb-4 flex justify-center lg:justify-start items-center pt-4">
-                                <div className="h-1 w-12 bg-purple-500 rounded-full mr-3"></div>
-                                <h2 className="text-2xl font-semibold text-gray-800">
-                                    Tecnologias SSR
-                                </h2>
-                            </div>
-                            <p className="mb-6 text-gray-700 text-center lg:text-left">
-                                Sugestões de stack para Server-Side Rendering
-                            </p>
-                            <div id="ssr-table" className="-mb-14">
-                                <div className="bg-white shadow-md rounded-lg p-4 sm:p-6 overflow-x-auto">
-                                    <TechTable id="st" columns={ssrColumns} items={ssrTech} />
-                                </div>
-                            </div>
-                            {/* Tech Details */}
-                            <div id="detail-ssr" className="pt-20 -mb-16">
-                                <TechDetailsSection id="ds" colorTitle="bg-purple-500" title="Detalhes das Tecnologias SSR" items={ssrDetails} />
-                            </div>
-                        </section>
+                        {/* Tech Stack Sections */}
+                        {techStackSectionsData.map((section) => {
+                            if(section.id === 'frontend') {
+                                const sec = section as TechStackSectionProps<FrontendTechItem>;
+                                return (
+                                    <TechStackSection
+                                        key={sec.id}
+                                        id={sec.id}
+                                        title={sec.title}
+                                        tableColumns={sec.tableColumns}
+                                        tableTechs={sec.tableTechs}
+                                        techDetails={sec.techDetails}
+                                        description={sec.description}
+                                        colorClass={sec.colorClass}
+                                    />
+                                )
+                            } else if(section.id === 'backend') {
+                                const sec = section as TechStackSectionProps<BackendTechItem>;
+                                return (
+                                    <TechStackSection
+                                        key={sec.id}
+                                        id={sec.id}
+                                        title={sec.title}
+                                        tableColumns={sec.tableColumns}
+                                        tableTechs={sec.tableTechs}
+                                        techDetails={sec.techDetails}
+                                        description={sec.description}
+                                        colorClass={sec.colorClass}
+                                    />
+                                )
+                            } else if(section.id === 'ssr') {
+                                const sec = section as TechStackSectionProps<FrontendTechItem>;
+                                return (
+                                    <TechStackSection
+                                        key={sec.id}
+                                        id={sec.id}
+                                        title={sec.title}
+                                        tableColumns={sec.tableColumns}
+                                        tableTechs={sec.tableTechs}
+                                        techDetails={sec.techDetails}
+                                        description={sec.description}
+                                        colorClass={sec.colorClass}
+                                    />
+                                )
+                            }
+                        })}
 
                         {/* Patterns Section */}
-                        <section id="secao-padroes" className="flex-1 pt-18">
+                        <section id="secao-padroes" className="flex-1 pt-6">
                             <div className="mb-6 flex justify-center lg:justify-start items-center pt-4">
                                 <div className="h-1 w-12 bg-yellow-500 rounded-full mr-3"></div>
                                 <h2 className="text-2xl font-semibold text-gray-800">
@@ -223,7 +197,6 @@ const HomePage: React.FC = () => {
                                     </div>
                                     <div className="bg-white shadow-md rounded-lg p-4 sm:p-6 overflow-x-auto">
                                         <TechTable
-                                            id={`table-${pat.id}`}
                                             columns={getPatternColumns(
                                                 typeof pat.title === "string" ? pat.title : String(pat.title)
                                             )}
